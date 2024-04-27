@@ -8,6 +8,11 @@ public class SetParentTransform : MonoBehaviour
 
     private void Start()
     {
+        if (GameObject.FindGameObjectWithTag("Player"))
+        {
+            parentTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+
         SetParent();
     }
 
