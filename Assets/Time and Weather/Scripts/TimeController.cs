@@ -4,6 +4,9 @@ using UnityEngine;
 using TMPro;
 //using UnityEditor;
 
+#if UNITY_EDITOR
+[RequireComponent(typeof(TimeDisplay))]
+#endif
 public class TimeController : MonoBehaviour
 {
     public static TimeController instance;
@@ -110,14 +113,14 @@ public class TimeController : MonoBehaviour
     [HideInInspector] public string timeString;
 
     [Header("Debug")]
-    public bool useSmoothLerp = true;
+    private bool useSmoothLerp = true;
     [Range(0, 10)] public float smoothLerp = 0.5f;
-    public float GetSmoothLerp { get { if (Application.isPlaying && useSmoothLerp) return smoothLerp * Time.unscaledDeltaTime; else return 1; } }
+    private float GetSmoothLerp { get { if (Application.isPlaying && useSmoothLerp) return smoothLerp * Time.unscaledDeltaTime; else return 1; } }
 
-    [Range(0, 1)] public float dayLightTime;
-    [Range(0, 1)] public float nightLightTime;
-    [Range(0, 1)] public float fadeToNight;
-    [Range(0, 1)] public float smoothFadeNight;
+    [Range(0, 1)] private float dayLightTime;
+    [Range(0, 1)] private float nightLightTime;
+    [Range(0, 1)] private float fadeToNight;
+    [Range(0, 1)] private float smoothFadeNight;
 
     [System.Serializable]
     public struct SkyData

@@ -42,7 +42,6 @@ public class WeatherDisplayEditor : Editor
     }
     public override void OnInspectorGUI()
     {
-        getTarget.Update();
         //DisplayFieldType = (displayFieldType)EditorGUILayout.EnumPopup("", DisplayFieldType);
 
         weatherDisplay = (WeatherDisplay)target;
@@ -187,10 +186,16 @@ public class WeatherDisplayEditor : Editor
             EditorGUILayout.Space(5);
         }
         forcastFoldOut = EditorGUILayout.Foldout(forcastFoldOut, "Hourly Forcast", true);
-        numOfHoursToDisplay = EditorGUILayout.IntSlider(numOfHoursToDisplay, 1, 24);
+        getTarget.Update();
 
         if (forcastFoldOut)
         {
+
+            EditorGUILayout.BeginHorizontal(); 
+            GUILayout.Label("Hours in Forcast ");
+            numOfHoursToDisplay = EditorGUILayout.IntSlider(numOfHoursToDisplay, 1, 24);
+            EditorGUILayout.EndHorizontal();
+
             //GUILayout.Label("Hourly Forcast ", EditorStyles.boldLabel);
             int maxForwardHours = hourlyForcast.arraySize - weatherController.timeController.timeHours;
             int backwardHours = numOfHoursToDisplay - maxForwardHours;
@@ -214,6 +219,12 @@ public class WeatherDisplayEditor : Editor
                 //EditorGUILayout.PropertyField(isRaining);
 
             }
+        }
+
+        if (GUILayout.Button("Reset Daily Forecast"))
+        {
+            weatherController.SetDailyConditions();
+            weatherController.SetCurrentConditions();
         }
 
         getTarget.ApplyModifiedProperties();

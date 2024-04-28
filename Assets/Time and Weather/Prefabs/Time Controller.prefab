@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1898008734982147875}
+  - component: {fileID: 627756389}
   - component: {fileID: 1898008734982147876}
   m_Layer: 0
   m_Name: Time Controller
@@ -32,6 +33,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &627756389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898008734982147877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7921435424515c64a804e7f93784e988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1898008734982147876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44,24 +57,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c997d62f8d0b24fa6c66d90097b05c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsPerMinuteInGame: 0.1
+  secondsPerMinuteInGame: 1
   timeScale: 365
-  timeOfDay: 5.2
+  timeOfDay: 7.33
   timeHours: 17
   timeMinutes: 0
   timeSeconds: 0
   timePercent: 0
   hourlyTimePercent: 0
-  sunriseTime: 4.9401884
-  sunriseTimePercent: 0
-  sunsetTime: 19.174917
-  sunsetTimePercent: 0
-  currentDay: 6
-  dayOfMonth: 1
+  sunriseTime: 7.0455446
+  sunriseTimePercent: 0.29356435
+  sunsetTime: 17.317066
+  sunsetTimePercent: 0.72154444
+  currentDay: 0
+  dayOfMonth: 23
   currentMonthData:
-    month: April
-    season: Autumn
-    daysInMonth: 30
+    month: July
+    season: Winter
+    daysInMonth: 31
   monthPresets:
   - month: January
     season: Summer
@@ -101,10 +114,9 @@ MonoBehaviour:
     daysInMonth: 31
   seasonalRotation: {fileID: 0}
   maxSeasonalTilt: 30
-  currentYear: 2024
-  dayCount: 0
+  currentYear: 2001
+  dayCount: 22
   skyData:
-    skyBoxMat: {fileID: 2100000, guid: d91fb1356e6f2d246bed4d9cddbd38c6, type: 2}
     lightIntensity: 1.3
     moonLightIntensity: 2
     sunSizeOverTime:

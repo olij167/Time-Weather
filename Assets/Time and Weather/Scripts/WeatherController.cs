@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 //using UnityEditor;
-
+#if UNITY_EDITOR
+[RequireComponent(typeof(WeatherDisplay))]
+#endif
 public class WeatherController : MonoBehaviour
 {
     public static WeatherController instance;
@@ -94,7 +96,7 @@ public class WeatherController : MonoBehaviour
     [Range(0f, 1f)] private float desiredSnowiness;
     [Space(5f)]
 
-
+    [Header("Surface Condition Variables")]
     [Tooltip("The speed which surface wetness increases based on the current weather preset")]
     [Range(0f, 1f)] public float wetnessSpeed;
     [Tooltip("The speed which surface wetness decreases based on the current weather preset")]
@@ -108,11 +110,11 @@ public class WeatherController : MonoBehaviour
     #endregion
     //[Space(10)]
     [Tooltip("The season that is currently selected")]
-    [field: ReadOnlyField] public SeasonConditions currentSeasonConditions;
+    [ReadOnlyField] public SeasonConditions currentSeasonConditions;
 
     [Header("Hourly Forcast")]
     [Tooltip("The hourly forcast for the day. It is generated at midnight and on start based on the currentSeasonConditions")]
-    public List<HourlyWeather> hourlyWeather;
+    [field: ReadOnlyField]public List<HourlyWeather> hourlyWeather;
 
     [Header("Current Wind")]
     [Tooltip("controls the speed of the clouds")]
@@ -172,6 +174,8 @@ public class WeatherController : MonoBehaviour
         }
 
         chanceOfRain = hourlyWeather[timeController.timeHours].chanceOfRain;
+        wetness = hourlyWeather[timeController.timeHours].wetness;
+        snowiness = hourlyWeather[timeController.timeHours].snowiness;
     }
 
     public void SetSeasonalConditions()
@@ -219,7 +223,7 @@ public class WeatherController : MonoBehaviour
         Debug.Log("Highest rain chance = " + highestRainChance + ", lowest rain chance = " + lowestRainChance);
         Debug.Log("Highest temp = " + highTemp + ", lowest temp = " + lowTemp);
 
-        //hourlyWeather = new List<HourlyWeather>(24);
+        hourlyWeather = new List<HourlyWeather>(24);
 
         for (int i = 0; i < 24; i++)
         {
@@ -350,7 +354,7 @@ public class WeatherController : MonoBehaviour
                 }
             }
 
-            hourlyWeather.Add( hourly);
+            hourlyWeather.Add(hourly);
         }
 
         temperature = hourlyWeather[timeController.timeHours].temp;
@@ -437,7 +441,7 @@ public class WeatherController : MonoBehaviour
                 cloudRenderer.material.SetVector("_CloudSpeed", wind * timeController.timeScale);
 #endif
 
-                if (hourlyWeather[timeController.timeHours].wetness == 0)
+                if (hourlyWeather[timeController.timeHours].wetness <= 0)
                 {
                     desiredWetness = Mathf.Lerp(wetness, 0f, hourlyTimePercent * evaporationSpeed);
                 }
@@ -449,13 +453,13 @@ public class WeatherController : MonoBehaviour
                 if (wetness != desiredWetness)
                     wetness = Mathf.Lerp(wetness, desiredWetness, hourlyTimePercent * 0.5f);
 
-                if (hourlyWeather[timeController.timeHours].snowiness == 0)
+                if (hourlyWeather[timeController.timeHours].snowiness <= 0)
                 {
                     desiredSnowiness = Mathf.Lerp(snowiness, 0f, hourlyTimePercent * evaporationSpeed);
                 }
                 else if (hourlyWeather[timeController.timeHours].snowiness > 0 && hourlyWeather[timeController.timeHours].snowiness > snowiness)
                 {
-                    desiredSnowiness = Mathf.Lerp(snowiness, hourlyWeather[timeController.timeHours].snowiness, hourlyTimePercent * wetnessSpeed);
+                    desiredSnowiness = Mathf.Lerp(snowiness, hourlyWeather[timeController.timeHours].snowiness, hourlyTimePercent * snowCoverSpeed);
                 }
 
                 if (snowiness != desiredSnowiness)

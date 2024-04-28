@@ -1,0 +1,2803 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!29 &1
+OcclusionCullingSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_OcclusionBakeSettings:
+    smallestOccluder: 5
+    smallestHole: 0.25
+    backfaceThreshold: 100
+  m_SceneGUID: 00000000000000000000000000000000
+  m_OcclusionCullingData: {fileID: 0}
+--- !u!104 &2
+RenderSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 9
+  m_Fog: 1
+  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_FogMode: 3
+  m_FogDensity: 0.01
+  m_LinearFogStart: 0
+  m_LinearFogEnd: 300
+  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
+  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
+  m_AmbientIntensity: 1
+  m_AmbientMode: 0
+  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_SkyboxMaterial: {fileID: 2100000, guid: d91fb1356e6f2d246bed4d9cddbd38c6, type: 2}
+  m_HaloStrength: 0.5
+  m_FlareStrength: 1
+  m_FlareFadeSpeed: 3
+  m_HaloTexture: {fileID: 0}
+  m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
+  m_DefaultReflectionMode: 0
+  m_DefaultReflectionResolution: 128
+  m_ReflectionBounces: 1
+  m_ReflectionIntensity: 1
+  m_CustomReflection: {fileID: 0}
+  m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0.019907283, g: 0.036277093, b: 0.27888307, a: 1}
+  m_UseRadianceAmbientProbe: 0
+--- !u!157 &3
+LightmapSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 12
+  m_GIWorkflowMode: 1
+  m_GISettings:
+    serializedVersion: 2
+    m_BounceScale: 1
+    m_IndirectOutputScale: 1
+    m_AlbedoBoost: 1
+    m_EnvironmentLightingMode: 0
+    m_EnableBakedLightmaps: 1
+    m_EnableRealtimeLightmaps: 0
+  m_LightmapEditorSettings:
+    serializedVersion: 12
+    m_Resolution: 2
+    m_BakeResolution: 40
+    m_AtlasSize: 1024
+    m_AO: 0
+    m_AOMaxDistance: 1
+    m_CompAOExponent: 1
+    m_CompAOExponentDirect: 0
+    m_ExtractAmbientOcclusion: 0
+    m_Padding: 2
+    m_LightmapParameters: {fileID: 0}
+    m_LightmapsBakeMode: 1
+    m_TextureCompression: 1
+    m_FinalGather: 0
+    m_FinalGatherFiltering: 1
+    m_FinalGatherRayCount: 256
+    m_ReflectionCompression: 2
+    m_MixedBakeMode: 2
+    m_BakeBackend: 1
+    m_PVRSampling: 1
+    m_PVRDirectSampleCount: 32
+    m_PVRSampleCount: 512
+    m_PVRBounces: 2
+    m_PVREnvironmentSampleCount: 256
+    m_PVREnvironmentReferencePointCount: 2048
+    m_PVRFilteringMode: 1
+    m_PVRDenoiserTypeDirect: 1
+    m_PVRDenoiserTypeIndirect: 1
+    m_PVRDenoiserTypeAO: 1
+    m_PVRFilterTypeDirect: 0
+    m_PVRFilterTypeIndirect: 0
+    m_PVRFilterTypeAO: 0
+    m_PVREnvironmentMIS: 1
+    m_PVRCulling: 1
+    m_PVRFilteringGaussRadiusDirect: 1
+    m_PVRFilteringGaussRadiusIndirect: 5
+    m_PVRFilteringGaussRadiusAO: 2
+    m_PVRFilteringAtrousPositionSigmaDirect: 0.5
+    m_PVRFilteringAtrousPositionSigmaIndirect: 2
+    m_PVRFilteringAtrousPositionSigmaAO: 1
+    m_ExportTrainingData: 0
+    m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
+  m_LightingDataAsset: {fileID: 0}
+  m_LightingSettings: {fileID: 0}
+--- !u!196 &4
+NavMeshSettings:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_BuildSettings:
+    serializedVersion: 2
+    agentTypeID: 0
+    agentRadius: 0.5
+    agentHeight: 2
+    agentSlope: 45
+    agentClimb: 0.4
+    ledgeDropHeight: 0
+    maxJumpAcrossDistance: 0
+    minRegionArea: 2
+    manualCellSize: 0
+    cellSize: 0.16666667
+    manualTileSize: 0
+    tileSize: 256
+    accuratePlacement: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
+    debug:
+      m_Flags: 0
+  m_NavMeshData: {fileID: 0}
+--- !u!1 &102504715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 102504719}
+  - component: {fileID: 102504718}
+  - component: {fileID: 102504717}
+  - component: {fileID: 102504716}
+  m_Layer: 0
+  m_Name: Sphere (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!135 &102504716
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102504715}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &102504717
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102504715}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 1c902a242d14a184f806f734a0ae18d3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &102504718
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102504715}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &102504719
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102504715}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 15, y: 15, z: 15}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1380516706}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &108344238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 108344242}
+  - component: {fileID: 108344241}
+  - component: {fileID: 108344240}
+  - component: {fileID: 108344239}
+  m_Layer: 0
+  m_Name: Sphere (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!135 &108344239
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108344238}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &108344240
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108344238}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 1c902a242d14a184f806f734a0ae18d3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &108344241
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108344238}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &108344242
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108344238}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -296, y: 0, z: 308}
+  m_LocalScale: {x: 15, y: 15, z: 15}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1380516706}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &330113701
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5152535710918290960, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152535710918290960, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152535710918290961, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152535710918290961, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.z
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152535711752323767, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152535712675637081, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152535712675637081, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152535712675637082, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5152535712675637082, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: ShapeModule.m_Scale.z
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453904872765, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: parentTransform
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: snowiness
+      value: 0.546
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: temperature
+      value: -13.618186
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: chanceOfRain
+      value: 58.65914
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: meltingSpeed
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: snowCoverSpeed
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: weatherChanges
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.size
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[0].temp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[1].temp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[2].temp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[3].temp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[4].temp
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[5].temp
+      value: -21.293917
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[6].temp
+      value: -18.004318
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[7].temp
+      value: -14.71472
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[8].temp
+      value: -11.425121
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[9].temp
+      value: -8.135523
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[10].temp
+      value: -4.845924
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[11].temp
+      value: -1.556325
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[12].temp
+      value: 1.733274
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[13].temp
+      value: 1.733274
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[14].temp
+      value: -2.1045911
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[15].temp
+      value: -5.9424562
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[16].temp
+      value: -9.780321
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[17].temp
+      value: -13.618186
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[18].temp
+      value: -17.45605
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[19].temp
+      value: -21.293917
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[20].temp
+      value: -21.293917
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[21].temp
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[22].temp
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[23].temp
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[24].temp
+      value: -5.719863
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[25].temp
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[26].temp
+      value: -25.27376
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[27].temp
+      value: 2.2465165
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[28].temp
+      value: -4.7674174
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[29].temp
+      value: -12.384264
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[30].temp
+      value: -25.27376
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[0].wetness
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[1].wetness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[2].wetness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[3].wetness
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[4].wetness
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[5].wetness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[6].wetness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[7].wetness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[8].wetness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[9].wetness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[10].wetness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[11].wetness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[12].wetness
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[13].wetness
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[14].wetness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[15].wetness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[16].wetness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[17].wetness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[18].wetness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[19].wetness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[20].wetness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[21].wetness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[22].wetness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[23].wetness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[26].wetness
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[29].wetness
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[0].isRaining
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[0].windSpeed
+      value: 0.8428011
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[1].isRaining
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[1].windSpeed
+      value: 8.850318
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[2].isRaining
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[2].windSpeed
+      value: 14.015093
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[3].isRaining
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[3].windSpeed
+      value: 11.2952175
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[4].isRaining
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[4].windSpeed
+      value: 15.337624
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[5].isRaining
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[5].windSpeed
+      value: 6.4537635
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[6].isRaining
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[6].windSpeed
+      value: -2.576829
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[7].isRaining
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[7].windSpeed
+      value: 1.1276803
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[8].isRaining
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[8].snowiness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[8].windSpeed
+      value: 2.9586525
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[9].isRaining
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[9].windSpeed
+      value: 10.259382
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[0].cloudPower
+      value: 3.1468868
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[10].isRaining
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[10].windSpeed
+      value: 18.584606
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[11].isRaining
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[11].windSpeed
+      value: 13.726261
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[12].isRaining
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[12].windSpeed
+      value: 21.995201
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[13].isRaining
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[13].snowiness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[13].windSpeed
+      value: 29.496977
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[14].isRaining
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[14].snowiness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[14].windSpeed
+      value: 21.039087
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[15].isRaining
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[15].snowiness
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[15].windSpeed
+      value: 19.197216
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[16].isRaining
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[16].snowiness
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[16].windSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[17].isRaining
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[17].snowiness
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[17].windSpeed
+      value: -4.101795
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[18].windSpeed
+      value: 5.2168736
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[19].isRaining
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[19].windSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[1].cloudPower
+      value: 2.9717984
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[20].isRaining
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[20].snowiness
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[20].windSpeed
+      value: 0.75792694
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[21].isRaining
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[21].snowiness
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[21].windSpeed
+      value: -8.138157
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[22].snowiness
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[22].windSpeed
+      value: -12.9274435
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[23].snowiness
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[23].windSpeed
+      value: -7.5520687
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[24].isRaining
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[24].windSpeed
+      value: 15.171278
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[25].isRaining
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[25].windSpeed
+      value: 9.076247
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[26].isRaining
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[26].windSpeed
+      value: -0.6722894
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[27].isRaining
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[27].windSpeed
+      value: 4.0007353
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[28].isRaining
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[28].windSpeed
+      value: 5.4913096
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[29].isRaining
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[29].windSpeed
+      value: 9.290966
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[2].cloudPower
+      value: 3.359489
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[30].windSpeed
+      value: 13.227863
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[3].cloudPower
+      value: 2.8085108
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[3].isMidnight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[4].cloudPower
+      value: 4.993385
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[4].isMidnight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[5].cloudPower
+      value: 4.5947437
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[5].isMidnight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[6].cloudPower
+      value: 4.5847206
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[7].cloudPower
+      value: 4.8737907
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[8].cloudPower
+      value: 4.769077
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[9].cloudPower
+      value: 3.4609826
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[10].cloudPower
+      value: 2.8144073
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[11].cloudPower
+      value: 3.2495003
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[12].cloudPower
+      value: 2.710729
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[13].cloudPower
+      value: 3.3031538
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[14].cloudPower
+      value: 3.4828622
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[15].cloudPower
+      value: 2.9090233
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[16].cloudPower
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[17].cloudPower
+      value: 3.4602025
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[18].cloudPower
+      value: 3.2870722
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[19].cloudPower
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[1].forcastTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[20].cloudPower
+      value: 3.420338
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[21].cloudPower
+      value: 2.8459802
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[22].cloudPower
+      value: 2.990466
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[23].cloudPower
+      value: 2.542463
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[24].cloudPower
+      value: 1.0346838
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[25].cloudPower
+      value: 0.8061679
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[26].cloudPower
+      value: 0.97821844
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[27].cloudPower
+      value: 1.0372385
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[28].cloudPower
+      value: 1.2075965
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[29].cloudPower
+      value: 1.2144809
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[2].forcastTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[30].cloudPower
+      value: 0.80120903
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[3].forcastTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[4].forcastTime
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[5].forcastTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[6].forcastTime
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[7].forcastTime
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[8].forcastTime
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[9].forcastTime
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[0].chanceOfRain
+      value: 53.214287
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[0].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: a82f5c71fbcb33947bc4b21dbbcfa7d5, type: 3}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[10].forcastTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[11].forcastTime
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[12].forcastTime
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[13].forcastTime
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[14].forcastTime
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[15].forcastTime
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[16].forcastTime
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[17].forcastTime
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[18].forcastTime
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[19].forcastTime
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[1].chanceOfRain
+      value: 47.178574
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[1].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: a82f5c71fbcb33947bc4b21dbbcfa7d5, type: 3}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[20].forcastTime
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[21].forcastTime
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[22].forcastTime
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[23].forcastTime
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[24].forcastTime
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[26].forcastTime
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[27].forcastTime
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[28].forcastTime
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[29].forcastTime
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[2].chanceOfRain
+      value: 41.14286
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[2].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 0652e26d183e21344af5cb68583e510f, type: 3}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[30].forcastTime
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[3].chanceOfRain
+      value: 35.107147
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[3].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: a82f5c71fbcb33947bc4b21dbbcfa7d5, type: 3}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[4].chanceOfRain
+      value: 29.071432
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[4].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 0652e26d183e21344af5cb68583e510f, type: 3}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[5].chanceOfRain
+      value: 23.035717
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[5].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 0652e26d183e21344af5cb68583e510f, type: 3}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[6].chanceOfRain
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[6].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 0652e26d183e21344af5cb68583e510f, type: 3}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[7].chanceOfRain
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[7].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 0652e26d183e21344af5cb68583e510f, type: 3}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[8].chanceOfRain
+      value: 11.994835
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[8].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 0652e26d183e21344af5cb68583e510f, type: 3}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[9].chanceOfRain
+      value: 33.63912
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[9].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: bf5683e2c57093545b806a3f235f612c, type: 3}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[10].chanceOfRain
+      value: 45.80479
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[10].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: bf5683e2c57093545b806a3f235f612c, type: 3}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[11].chanceOfRain
+      value: 54.457436
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[11].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: bf5683e2c57093545b806a3f235f612c, type: 3}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[12].chanceOfRain
+      value: 49.04527
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[12].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: a82f5c71fbcb33947bc4b21dbbcfa7d5, type: 3}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[13].chanceOfRain
+      value: 51.47597
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[13].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 0652e26d183e21344af5cb68583e510f, type: 3}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[14].chanceOfRain
+      value: 54.098145
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[14].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 0652e26d183e21344af5cb68583e510f, type: 3}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[15].chanceOfRain
+      value: 55.58505
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[15].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: bf5683e2c57093545b806a3f235f612c, type: 3}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[16].chanceOfRain
+      value: 55.522457
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[16].weatherAudio
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[17].chanceOfRain
+      value: 58.65914
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[17].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f030e3e27811534c8d8f170419ac0cb, type: 3}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[18].chanceOfRain
+      value: 58.99641
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[18].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: bf5683e2c57093545b806a3f235f612c, type: 3}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[19].chanceOfRain
+      value: 58.362743
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[19].weatherAudio
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[20].chanceOfRain
+      value: 57.882156
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[20].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f030e3e27811534c8d8f170419ac0cb, type: 3}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[21].chanceOfRain
+      value: 59.146683
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[21].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: a82f5c71fbcb33947bc4b21dbbcfa7d5, type: 3}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[22].chanceOfRain
+      value: 57.95099
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[23].chanceOfRain
+      value: 56.7584
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[23].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: a82f5c71fbcb33947bc4b21dbbcfa7d5, type: 3}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[24].chanceOfRain
+      value: 85.07086
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[24].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f030e3e27811534c8d8f170419ac0cb, type: 3}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[25].chanceOfRain
+      value: 86
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[26].chanceOfRain
+      value: 95
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[26].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f030e3e27811534c8d8f170419ac0cb, type: 3}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[27].chanceOfRain
+      value: 75.16819
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[27].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: a82f5c71fbcb33947bc4b21dbbcfa7d5, type: 3}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[28].chanceOfRain
+      value: 76.21844
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[28].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f030e3e27811534c8d8f170419ac0cb, type: 3}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[29].chanceOfRain
+      value: 75.293724
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[29].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f030e3e27811534c8d8f170419ac0cb, type: 3}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[30].chanceOfRain
+      value: 75.58162
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[30].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 0652e26d183e21344af5cb68583e510f, type: 3}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[0].weatherCondition
+      value: Raining
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[1].weatherCondition
+      value: Raining
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[2].weatherCondition
+      value: Cloudy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[3].weatherCondition
+      value: Raining
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[4].weatherCondition
+      value: Clear
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[5].weatherCondition
+      value: Clear
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[6].weatherCondition
+      value: Clear
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[7].weatherCondition
+      value: Clear
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[8].weatherCondition
+      value: Clear
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[9].weatherCondition
+      value: Cloudy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[10].weatherCondition
+      value: Cloudy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[11].weatherCondition
+      value: Cloudy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[12].weatherCondition
+      value: Raining
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[13].weatherCondition
+      value: Cloudy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[14].weatherCondition
+      value: Cloudy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[15].weatherCondition
+      value: Heavy Snowfall
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[16].weatherCondition
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[17].weatherCondition
+      value: Heavy Snowfall
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[18].weatherCondition
+      value: Heavy Snowfall
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[19].weatherCondition
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[20].weatherCondition
+      value: Heavy Snowfall
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[21].weatherCondition
+      value: Raining
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[22].weatherCondition
+      value: Raining
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[23].weatherCondition
+      value: Raining
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[24].weatherCondition
+      value: Snowstorm
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[25].weatherCondition
+      value: Storming
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[26].weatherCondition
+      value: Snowstorm
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[27].weatherCondition
+      value: Storming
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[28].weatherCondition
+      value: Snowstorm
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[29].weatherCondition
+      value: Snowstorm
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165453983530994, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[30].weatherCondition
+      value: Overcast
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165454233506675, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: m_Name
+      value: Time and Weather System Components
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165454233506676, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165454233506676, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165454233506676, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165454233506676, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165454233506676, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165454233506676, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165454233506676, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165454233506676, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165454233506676, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165454233506676, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5169165454233506676, guid: e4029cef6896fc047b0e6ca1232b103e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e4029cef6896fc047b0e6ca1232b103e, type: 3}
+--- !u!1 &377461045
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 377461049}
+  - component: {fileID: 377461048}
+  - component: {fileID: 377461047}
+  - component: {fileID: 377461046}
+  m_Layer: 0
+  m_Name: Sphere (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!135 &377461046
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377461045}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &377461047
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377461045}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 1c902a242d14a184f806f734a0ae18d3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &377461048
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377461045}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &377461049
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377461045}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 194.20001, y: 0, z: 284.5}
+  m_LocalScale: {x: 15, y: 15, z: 15}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1380516706}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &410212701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 410212705}
+  - component: {fileID: 410212704}
+  - component: {fileID: 410212703}
+  - component: {fileID: 410212702}
+  m_Layer: 0
+  m_Name: Sphere (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!135 &410212702
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410212701}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &410212703
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410212701}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 1c902a242d14a184f806f734a0ae18d3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &410212704
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410212701}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &410212705
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410212701}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -72.59, y: 0, z: 67}
+  m_LocalScale: {x: 15, y: 15, z: 15}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1380516706}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &751974429
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 751974433}
+  - component: {fileID: 751974432}
+  - component: {fileID: 751974431}
+  - component: {fileID: 751974430}
+  m_Layer: 0
+  m_Name: Sphere (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!135 &751974430
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751974429}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &751974431
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751974429}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 1c902a242d14a184f806f734a0ae18d3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &751974432
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751974429}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &751974433
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751974429}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -57.1, y: 0, z: 129.2}
+  m_LocalScale: {x: 15, y: 15, z: 15}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1380516706}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &926217302
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 926217306}
+  - component: {fileID: 926217305}
+  - component: {fileID: 926217304}
+  - component: {fileID: 926217303}
+  m_Layer: 0
+  m_Name: Sphere (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!135 &926217303
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926217302}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &926217304
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926217302}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 1c902a242d14a184f806f734a0ae18d3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &926217305
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926217302}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &926217306
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926217302}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 32.199997, y: 0, z: 134.7}
+  m_LocalScale: {x: 15, y: 15, z: 15}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1380516706}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1171802767
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1171802771}
+  - component: {fileID: 1171802770}
+  - component: {fileID: 1171802769}
+  - component: {fileID: 1171802768}
+  m_Layer: 0
+  m_Name: Sphere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!135 &1171802768
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171802767}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1171802769
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171802767}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 1c902a242d14a184f806f734a0ae18d3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1171802770
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171802767}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1171802771
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171802767}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -15.901337, y: 0, z: 30.98}
+  m_LocalScale: {x: 15, y: 15, z: 15}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1380516706}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1380516705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1380516706}
+  m_Layer: 0
+  m_Name: Wet & Snowy Default Objects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1380516706
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380516705}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 22.9, y: 3, z: 16.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1171802771}
+  - {fileID: 410212705}
+  - {fileID: 926217306}
+  - {fileID: 1567123715}
+  - {fileID: 1623696942}
+  - {fileID: 108344242}
+  - {fileID: 377461049}
+  - {fileID: 751974433}
+  - {fileID: 102504719}
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1567123711
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1567123715}
+  - component: {fileID: 1567123714}
+  - component: {fileID: 1567123713}
+  - component: {fileID: 1567123712}
+  m_Layer: 0
+  m_Name: Sphere (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!135 &1567123712
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567123711}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1567123713
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567123711}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 1c902a242d14a184f806f734a0ae18d3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1567123714
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567123711}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1567123715
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1567123711}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -135.8, y: 0, z: 84.2}
+  m_LocalScale: {x: 15, y: 15, z: 15}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1380516706}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1623696938
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1623696942}
+  - component: {fileID: 1623696941}
+  - component: {fileID: 1623696940}
+  - component: {fileID: 1623696939}
+  m_Layer: 0
+  m_Name: Sphere (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!135 &1623696939
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623696938}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1623696940
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623696938}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 1c902a242d14a184f806f734a0ae18d3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1623696941
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623696938}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1623696942
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623696938}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -35.5, y: 0, z: 308}
+  m_LocalScale: {x: 15, y: 15, z: 15}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1380516706}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1774359780
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1774359783}
+  - component: {fileID: 1774359782}
+  - component: {fileID: 1774359781}
+  - component: {fileID: 1774359784}
+  m_Layer: 0
+  m_Name: Main Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &1774359781
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774359780}
+  m_Enabled: 1
+--- !u!20 &1774359782
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774359780}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &1774359783
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774359780}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 12, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1774359784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774359780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+--- !u!1 &1969163122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1969163126}
+  - component: {fileID: 1969163125}
+  - component: {fileID: 1969163124}
+  - component: {fileID: 1969163123}
+  m_Layer: 0
+  m_Name: Ground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!64 &1969163123
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969163122}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1969163124
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969163122}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 13808b6abc396514a8b693b073031083, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1969163125
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969163122}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1969163126
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969163122}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 100, y: 1, z: 100}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

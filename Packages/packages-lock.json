@@ -1,13 +1,5 @@
 {
   "dependencies": {
-    "com.kink3d.mirrors": {
-      "version": "file:C:/Users/61426/Desktop/Unity Packages/kMirrors-master",
-      "depth": 0,
-      "source": "local",
-      "dependencies": {
-        "com.unity.render-pipelines.universal": "7.x.x"
-      }
-    },
     "com.unity.burst": {
       "version": "1.6.6",
       "depth": 1,

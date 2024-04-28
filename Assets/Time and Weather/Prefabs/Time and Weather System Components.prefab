@@ -56,6 +56,16 @@ PrefabInstance:
       objectReference: {fileID: 2311806105166531387}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
+      propertyPath: cloudPower
+      value: 2.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: chanceOfRain
+      value: 6.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
       propertyPath: weatherAudio
       value: 
       objectReference: {fileID: 7290503024030497557}
@@ -66,6 +76,11 @@ PrefabInstance:
       objectReference: {fileID: 6270466126747642042}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
+      propertyPath: timeController
+      value: 
+      objectReference: {fileID: 5169165453950741203}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
       propertyPath: chanceOfRainText
       value: 
       objectReference: {fileID: 2311806104579183635}
@@ -74,6 +89,26 @@ PrefabInstance:
       propertyPath: weatherConditionText
       value: 
       objectReference: {fileID: 2311806104121235659}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: seasonConditions.Array.data[1].tempRange.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: seasonConditions.Array.data[3].tempRange.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: seasonConditions.Array.data[1].chanceOfRainRange.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: seasonConditions.Array.data[1].chanceOfRainRange.y
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: weatherDataPresets.Array.data[3].weatherParticles.Array.data[0].particleSystem
@@ -194,33 +229,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5169165454233506676}
     m_Modifications:
-    - target: {fileID: 7469712497237299955, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 1e1e6961568695049a21982ceb22062c,
-        type: 2}
-    - target: {fileID: 7469712497237299955, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_fontColor.b
-      value: 0.8742138
-      objectReference: {fileID: 0}
-    - target: {fileID: 7469712497237299955, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_fontColor.g
-      value: 0.99515206
-      objectReference: {fileID: 0}
-    - target: {fileID: 7469712497237299955, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2896772667484424471, guid: 1e1e6961568695049a21982ceb22062c,
-        type: 2}
-    - target: {fileID: 7469712497237299955, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4292869887
-      objectReference: {fileID: 0}
     - target: {fileID: 7469712497239501107, guid: a96146495d52ea5489d8e7c049c3cffe,
         type: 3}
       propertyPath: m_Pivot.x
@@ -331,148 +339,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Time & Weather System Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 7469712497309295569, guid: a96146495d52ea5489d8e7c049c3cffe,
+    - target: {fileID: 7469712498485506523, guid: a96146495d52ea5489d8e7c049c3cffe,
         type: 3}
       propertyPath: m_text
-      value: Clear
-      objectReference: {fileID: 0}
-    - target: {fileID: 7469712497309295569, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 1e1e6961568695049a21982ceb22062c,
-        type: 2}
-    - target: {fileID: 7469712497309295569, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_fontColor.b
-      value: 0.8742138
-      objectReference: {fileID: 0}
-    - target: {fileID: 7469712497309295569, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_fontColor.g
-      value: 0.99515206
-      objectReference: {fileID: 0}
-    - target: {fileID: 7469712497309295569, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2896772667484424471, guid: 1e1e6961568695049a21982ceb22062c,
-        type: 2}
-    - target: {fileID: 7469712497309295569, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4292869887
-      objectReference: {fileID: 0}
-    - target: {fileID: 7469712497309295570, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -180
-      objectReference: {fileID: 0}
-    - target: {fileID: 7469712497786154761, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_text
-      value: 20% chance of rain
-      objectReference: {fileID: 0}
-    - target: {fileID: 7469712497786154761, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 1e1e6961568695049a21982ceb22062c,
-        type: 2}
-    - target: {fileID: 7469712497786154761, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_fontColor.b
-      value: 0.8742138
-      objectReference: {fileID: 0}
-    - target: {fileID: 7469712497786154761, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_fontColor.g
-      value: 0.99515206
-      objectReference: {fileID: 0}
-    - target: {fileID: 7469712497786154761, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_lineSpacing
-      value: -33.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 7469712497786154761, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2896772667484424471, guid: 1e1e6961568695049a21982ceb22062c,
-        type: 2}
-    - target: {fileID: 7469712497786154761, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4292869887
-      objectReference: {fileID: 0}
-    - target: {fileID: 7469712497786154762, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 225
-      objectReference: {fileID: 0}
-    - target: {fileID: 7469712497786154762, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -80
-      objectReference: {fileID: 0}
-    - target: {fileID: 7469712498406764577, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_text
-      value: "19\xB0C"
-      objectReference: {fileID: 0}
-    - target: {fileID: 7469712498406764577, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 1e1e6961568695049a21982ceb22062c,
-        type: 2}
-    - target: {fileID: 7469712498406764577, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_fontColor.b
-      value: 0.8742138
-      objectReference: {fileID: 0}
-    - target: {fileID: 7469712498406764577, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_fontColor.g
-      value: 0.99515206
-      objectReference: {fileID: 0}
-    - target: {fileID: 7469712498406764577, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2896772667484424471, guid: 1e1e6961568695049a21982ceb22062c,
-        type: 2}
-    - target: {fileID: 7469712498406764577, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4292869887
-      objectReference: {fileID: 0}
-    - target: {fileID: 7469712498485506523, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 1e1e6961568695049a21982ceb22062c,
-        type: 2}
-    - target: {fileID: 7469712498485506523, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_fontColor.b
-      value: 0.8742138
-      objectReference: {fileID: 0}
-    - target: {fileID: 7469712498485506523, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_fontColor.g
-      value: 0.99515206
-      objectReference: {fileID: 0}
-    - target: {fileID: 7469712498485506523, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 2896772667484424471, guid: 1e1e6961568695049a21982ceb22062c,
-        type: 2}
-    - target: {fileID: 7469712498485506523, guid: a96146495d52ea5489d8e7c049c3cffe,
-        type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4292869887
+      value: "Saturday, April 19, \nAutumn, 1999"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a96146495d52ea5489d8e7c049c3cffe, type: 3}
@@ -746,18 +616,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5169165453783484964}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5169165453783484956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7267713142196706177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dec1cf464f6981d44af5050701e2a9a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &5169165453878853081
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -770,25 +628,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud Plane
       objectReference: {fileID: 0}
+    - target: {fileID: 1205200188172588387, guid: 4efab63962e24a748a3775c564e2b5f8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1205200188172588389, guid: 4efab63962e24a748a3775c564e2b5f8,
         type: 3}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1205200188172588389, guid: 4efab63962e24a748a3775c564e2b5f8,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 600
-      objectReference: {fileID: 0}
-    - target: {fileID: 1205200188172588389, guid: 4efab63962e24a748a3775c564e2b5f8,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 600
-      objectReference: {fileID: 0}
-    - target: {fileID: 1205200188172588389, guid: 4efab63962e24a748a3775c564e2b5f8,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 225
       objectReference: {fileID: 0}
     - target: {fileID: 1205200188172588389, guid: 4efab63962e24a748a3775c564e2b5f8,
         type: 3}
@@ -838,11 +686,6 @@ PrefabInstance:
     - target: {fileID: 1205200188172588389, guid: 4efab63962e24a748a3775c564e2b5f8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1205200188172588389, guid: 4efab63962e24a748a3775c564e2b5f8,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -933,6 +776,11 @@ PrefabInstance:
       objectReference: {fileID: 2311806105289050817}
     - target: {fileID: 1898008734982147876, guid: 2f16708e9513a8141a6a4d7477356c3e,
         type: 3}
+      propertyPath: dayCount
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898008734982147876, guid: 2f16708e9513a8141a6a4d7477356c3e,
+        type: 3}
       propertyPath: sunLight
       value: 
       objectReference: {fileID: 4036933613455614719}
@@ -949,7 +797,22 @@ PrefabInstance:
     - target: {fileID: 1898008734982147876, guid: 2f16708e9513a8141a6a4d7477356c3e,
         type: 3}
       propertyPath: timeOfDay
-      value: 5.95
+      value: 3.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898008734982147876, guid: 2f16708e9513a8141a6a4d7477356c3e,
+        type: 3}
+      propertyPath: currentDay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898008734982147876, guid: 2f16708e9513a8141a6a4d7477356c3e,
+        type: 3}
+      propertyPath: dayOfMonth
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898008734982147876, guid: 2f16708e9513a8141a6a4d7477356c3e,
+        type: 3}
+      propertyPath: currentYear
+      value: 1999
       objectReference: {fileID: 0}
     - target: {fileID: 1898008734982147876, guid: 2f16708e9513a8141a6a4d7477356c3e,
         type: 3}
@@ -958,8 +821,23 @@ PrefabInstance:
       objectReference: {fileID: 4036933613262108550}
     - target: {fileID: 1898008734982147876, guid: 2f16708e9513a8141a6a4d7477356c3e,
         type: 3}
+      propertyPath: currentMonthData.month
+      value: April
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898008734982147876, guid: 2f16708e9513a8141a6a4d7477356c3e,
+        type: 3}
       propertyPath: secondsPerMinuteInGame
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898008734982147876, guid: 2f16708e9513a8141a6a4d7477356c3e,
+        type: 3}
+      propertyPath: currentMonthData.season
+      value: Autumn
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898008734982147876, guid: 2f16708e9513a8141a6a4d7477356c3e,
+        type: 3}
+      propertyPath: currentMonthData.daysInMonth
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1898008734982147877, guid: 2f16708e9513a8141a6a4d7477356c3e,
         type: 3}
@@ -968,6 +846,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f16708e9513a8141a6a4d7477356c3e, type: 3}
+--- !u!114 &5169165453950741203 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1898008734982147876, guid: 2f16708e9513a8141a6a4d7477356c3e,
+    type: 3}
+  m_PrefabInstance: {fileID: 6767648501603460599}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09c997d62f8d0b24fa6c66d90097b05c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5169165453950741204 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1898008734982147875, guid: 2f16708e9513a8141a6a4d7477356c3e,
