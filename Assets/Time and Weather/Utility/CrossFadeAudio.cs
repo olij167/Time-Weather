@@ -4,7 +4,10 @@ using UnityEngine;
 
 //Code base sourced from user 'losingisfun' in this thread https://forum.unity.com/threads/audio-crossfade-how.144606/
 
-[RequireComponent(typeof(AudioSource))]
+namespace TimeWeather
+{
+
+    [RequireComponent(typeof(AudioSource))]
 public class CrossFadeAudio : MonoBehaviour
 {
     
@@ -102,4 +105,5 @@ public class CrossFadeAudio : MonoBehaviour
 
         StopCoroutine(musicTransition);
     }
+}
 }

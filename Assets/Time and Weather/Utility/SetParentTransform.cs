@@ -2,23 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SetParentTransform : MonoBehaviour
+namespace TimeWeather
 {
-    public Transform parentTransform;
-
-    private void Start()
+    public class SetParentTransform : MonoBehaviour
     {
-        SetParent();
-    }
+        public Transform parentTransform;
 
-    public void SetParent()
-    {
-        if (parentTransform == null)
-            parentTransform = Camera.main.transform;
+        private void Start()
+        {
+            SetParent();
+        }
+
+        public void SetParent()
+        {
+            if (parentTransform == null)
+                parentTransform = Camera.main.transform;
 
             transform.parent = parentTransform;
             transform.position = parentTransform.position;
-        
 
+
+        }
     }
 }

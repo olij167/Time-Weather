@@ -4,301 +4,278 @@ using UnityEngine;
 using TMPro;
 //using UnityEditor;
 
-#if UNITY_EDITOR
-[RequireComponent(typeof(TimeDisplay))]
-#endif
-public class TimeController : MonoBehaviour
+namespace TimeWeather
 {
-    public static TimeController instance;
 
-    private void Awake()
+#if UNITY_EDITOR
+    [RequireComponent(typeof(TimeDisplay))]
+#endif
+    public class TimeController : MonoBehaviour
     {
-        if (instance == null)
+        public static TimeController instance;
+
+        private void Awake()
         {
-            instance = this;
-        }
-        else if (instance != this)
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    [System.Serializable] public enum Day { Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday}
-
-    [System.Serializable] public class MonthData
-    {
-        [Tooltip("The name of the month")]
-        public string month;
-        [Tooltip("The name of the season")] 
-        public string season;
-        [Tooltip("The number of days in the month")]
-        public int daysInMonth;
-    }
-
-    [Header("Time")]
-    [Tooltip("How many real-world seconds it takes for an in-game minute to pass")]
-    [Range(0.001f, 60f)] public float secondsPerMinuteInGame = 0.5f; //length of the day in minutes
-    [HideInInspector] public float timeScale = 100f;
-    [Tooltip("The current in-game time")]
-    [Range(0, 24)] public float timeOfDay;
-    [HideInInspector] public int timeHours;
-    [HideInInspector] public float timeMinutes;
-    [HideInInspector] public float timeSeconds;
-
-    [HideInInspector, Range(0, 1)] public float timePercent;
-
-    [Tooltip("The current hours progression as a value between 0 and 1")]
-    [Range(0, 1)] public float hourlyTimePercent;
-
-    [Space(10)]
-
-    [Tooltip("The time the sun will rise. Requires a 'WeatherController' in the scene to change")]
-    [field: ReadOnlyField] public float sunriseTime;
-    [HideInInspector, Range(0, 1)] public float sunriseTimePercent;
-
-    [Tooltip("The time the sun will rise. Requires a 'WeatherController' in the scene to change")]
-    [field: ReadOnlyField] public float sunsetTime;
-    [HideInInspector, Range(0, 1)] public float sunsetTimePercent;
-
-    [Header("Day")]
-    [Tooltip("The current day")]
-    public Day currentDay = Day.Sunday;
-    [Tooltip("The current date")]
-    public int dayOfMonth = 1;
-
-    [Header("Month")]
-    [Tooltip("The current month's variables")]
-    public MonthData currentMonthData;
-
-    [Tooltip("An array of each month in the year. Set the months of the year here. In-game year length is based on the sum of each element's 'daysInMonth' variable")]
-    public MonthData[] monthPresets;
-
-    [Tooltip("The transform responsible for tilting the sun throughout the year")]
-    public Transform seasonalRotation;
-
-    [Tooltip("The range the sun will tilt throughout the year")]
-    [Range(-45f, 45f)] public float maxSeasonalTilt;
-
-    [Tooltip("The current year")]
-    public int currentYear;
-    private int daysInYear;
-
-    [Tooltip("The total number of days which have passed in the current year")]
-    [Range(0, 365)]public int dayCount = 0;
-
-    [Header("Sky Objects")]
-    [Tooltip("The variables which controll the skybox throughout the day")]
-    public SkyData skyData;
-    [Tooltip("The sun's light component")]
-    public Light sunLight;
-    [Tooltip("The moon's light component")]
-    [SerializeField] private Light moonLight;
-    [Tooltip("The moon object")]
-    [SerializeField] private GameObject moon;
-
-    private WeatherController weatherController;
-
-
-    [Header("UI")]
-    [Tooltip("Toggle whether to show seconds on the UI")]
-    public bool showSeconds = true;
-    [Tooltip("Toggle whether to show 12 or 24 hour time")]
-    public bool twelveHourTime;
-    private bool isNewDay;
-
-    [Tooltip("Text for displaying the in-game clock")]
-    public TextMeshProUGUI timeText;
-    [Tooltip("Text for displaying the day, month, season, and year")]
-    public TextMeshProUGUI dayText;
-    [HideInInspector] public string timeString;
-
-    [Header("Debug")]
-    private bool useSmoothLerp = true;
-    [Range(0, 10)] public float smoothLerp = 0.5f;
-    private float GetSmoothLerp { get { if (Application.isPlaying && useSmoothLerp) return smoothLerp * Time.unscaledDeltaTime; else return 1; } }
-
-    [Range(0, 1)] private float dayLightTime;
-    [Range(0, 1)] private float nightLightTime;
-    [Range(0, 1)] private float fadeToNight;
-    [Range(0, 1)] private float smoothFadeNight;
-
-    [System.Serializable]
-    public struct SkyData
-    {
-        //[Tooltip("The skybox material")]
-        //public Material skyBoxMat;
-        [Tooltip("The sun's intesity")]
-        public float lightIntensity;// = 1.3f;
-        [Tooltip("The moon's intensity")]
-        public float moonLightIntensity;// = 1;
-        [Space()]
-        [Tooltip("A curve representing the sun's scale throughout the day")]
-        public AnimationCurve sunSizeOverTime;
-        [Tooltip("A curve representing the sun's light intensity throughout the day")] 
-        public AnimationCurve sunIntensityCurve;
-        [Space()]
-        [Tooltip("A gradient for the colour of the top of the skybox throughout the day")]
-        public Gradient dayTopColorOverTime;
-        [Tooltip("A gradient for the colour of the middle of the skybox throughout the day")]
-        public Gradient dayMidColorOverTime;
-
-        [Space()]
-        [Tooltip("A gradient for the colour of the top of the skybox throughout the night")]
-        public Gradient nightTopColorOverTime;
-        [Tooltip("A gradient for the colour of the middle of the skybox throughout the night")]
-        public Gradient nightMidColorOverTime;
-
-        [Tooltip("A gradient for the ambient atmospheric colour throughout the day")]
-        public Gradient ambientColour; // atmospheric colour - set based on weather
-        [Tooltip("A gradient for the fog colour throughout the day")]
-        public Gradient fogColour; // set based on weather
-        [Tooltip("Fog transition smoothing")]
-        [Range(0, 1)] public float fogToDayColor;
-
-    }
-    
-
-    void Start()
-    {
-        if (WeatherController.instance != null) weatherController = WeatherController.instance;
-
-        dayText.text = currentDay.ToString() + ", " + currentMonthData.month + " " + dayOfMonth + ", \n" + currentMonthData.season + ", " + currentYear;
-
-        if (currentMonthData.month == string.Empty)
-            ProgressMonth();
-
-        
-
-        for (int i = 0; i < monthPresets.Length; i++)
-        {
-            daysInYear += monthPresets[i].daysInMonth;
-        }
-        Debug.Log("Days in year " + daysInYear);
-    }
-
-    void Update()
-    {
-        if (Application.isPlaying)
-        {
-            timeScale = 24 / (secondsPerMinuteInGame / 60);
-
-            timeOfDay += Time.deltaTime * timeScale / 86400; // seconds in a day
-
-            timePercent = (timeOfDay %= 24f) / 24f;
-            UpdateLighting();
-
-            timeHours = (int)timeOfDay;
-            timeMinutes = Mathf.Clamp((timeOfDay - timeHours) * 60, 0f, 59.49f);
-            timeSeconds = Mathf.Clamp((timeMinutes - (int)timeMinutes) * 60, 0f, 59.49f);
-
-            hourlyTimePercent = (timeMinutes %= 60f) / 60f;
-
-            if (twelveHourTime)
+            if (instance == null)
             {
-                if (timeOfDay < 12)
+                instance = this;
+            }
+            else if (instance != this)
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        [System.Serializable] public enum Day { Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday }
+
+        [System.Serializable]
+        public class MonthData
+        {
+            [Tooltip("The name of the month")]
+            public string month;
+            [Tooltip("The name of the season")]
+            public string season;
+            [Tooltip("The number of days in the month")]
+            public int daysInMonth;
+        }
+
+        [Header("Time")]
+        [Tooltip("How many real-world seconds it takes for an in-game minute to pass")]
+        [Range(0.001f, 60f)] public float secondsPerMinuteInGame = 0.5f; //length of the day in minutes
+        [HideInInspector] public float timeScale = 100f;
+        [Tooltip("The current in-game time")]
+        [Range(0, 24)] public float timeOfDay;
+        [HideInInspector] public int timeHours;
+        [HideInInspector] public float timeMinutes;
+        [HideInInspector] public float timeSeconds;
+
+        [HideInInspector, Range(0, 1)] public float timePercent;
+
+        [Tooltip("The current hours progression as a value between 0 and 1")]
+        [Range(0, 1)] public float hourlyTimePercent;
+
+        [Space(10)]
+
+        [Tooltip("The time the sun will rise. Requires a 'WeatherController' in the scene to change")]
+        [field: ReadOnlyField] public float sunriseTime;
+        [HideInInspector, Range(0, 1)] public float sunriseTimePercent;
+
+        [Tooltip("The time the sun will rise. Requires a 'WeatherController' in the scene to change")]
+        [field: ReadOnlyField] public float sunsetTime;
+        [HideInInspector, Range(0, 1)] public float sunsetTimePercent;
+
+        [Header("Day")]
+        [Tooltip("The current day")]
+        public Day currentDay = Day.Sunday;
+        [Tooltip("The current date")]
+        public int dayOfMonth = 1;
+
+        [Header("Month")]
+        [Tooltip("The current month's variables")]
+        public MonthData currentMonthData;
+
+        [Tooltip("An array of each month in the year. Set the months of the year here. In-game year length is based on the sum of each element's 'daysInMonth' variable")]
+        public MonthData[] monthPresets;
+
+        [Tooltip("The transform responsible for tilting the sun throughout the year")]
+        public Transform seasonalRotation;
+
+        [Tooltip("The range the sun will tilt throughout the year")]
+        [Range(-45f, 45f)] public float maxSeasonalTilt;
+
+        [Tooltip("The current year")]
+        public int currentYear;
+        private int daysInYear;
+
+        [Tooltip("The total number of days which have passed in the current year")]
+        [Range(0, 365)] public int dayCount = 0;
+
+        [Header("Sky Objects")]
+        [Tooltip("The variables which controll the skybox throughout the day")]
+        public SkyData skyData;
+        [Tooltip("The sun's light component")]
+        public Light sunLight;
+        [Tooltip("The moon's light component")]
+        [SerializeField] private Light moonLight;
+        [Tooltip("The moon object")]
+        [SerializeField] private GameObject moon;
+
+        private WeatherController weatherController;
+
+
+        [Header("UI")]
+        [Tooltip("Toggle whether to show seconds on the UI")]
+        public bool showSeconds = true;
+        [Tooltip("Toggle whether to show 12 or 24 hour time")]
+        public bool twelveHourTime;
+        private bool isNewDay;
+
+        [Tooltip("Text for displaying the in-game clock")]
+        public TextMeshProUGUI timeText;
+        [Tooltip("Text for displaying the day, month, season, and year")]
+        public TextMeshProUGUI dayText;
+        [HideInInspector] public string timeString;
+
+        [Header("Debug")]
+        private bool useSmoothLerp = true;
+        [Range(0, 10)] public float smoothLerp = 0.5f;
+        private float GetSmoothLerp { get { if (Application.isPlaying && useSmoothLerp) return smoothLerp * Time.unscaledDeltaTime; else return 1; } }
+
+        [Range(0, 1)] private float dayLightTime;
+        [Range(0, 1)] private float nightLightTime;
+        [Range(0, 1)] private float fadeToNight;
+        [Range(0, 1)] private float smoothFadeNight;
+
+        //public Calendar calendar;
+
+        [System.Serializable]
+        public struct SkyData
+        {
+            //[Tooltip("The skybox material")]
+            //public Material skyBoxMat;
+            [Tooltip("The sun's intesity")]
+            public float lightIntensity;// = 1.3f;
+            [Tooltip("The moon's intensity")]
+            public float moonLightIntensity;// = 1;
+            [Space()]
+            [Tooltip("A curve representing the sun's scale throughout the day")]
+            public AnimationCurve sunSizeOverTime;
+            [Tooltip("A curve representing the sun's light intensity throughout the day")]
+            public AnimationCurve sunIntensityCurve;
+            [Space()]
+            [Tooltip("A gradient for the colour of the top of the skybox throughout the day")]
+            public Gradient dayTopColorOverTime;
+            [Tooltip("A gradient for the colour of the middle of the skybox throughout the day")]
+            public Gradient dayMidColorOverTime;
+
+            [Space()]
+            [Tooltip("A gradient for the colour of the top of the skybox throughout the night")]
+            public Gradient nightTopColorOverTime;
+            [Tooltip("A gradient for the colour of the middle of the skybox throughout the night")]
+            public Gradient nightMidColorOverTime;
+
+            [Tooltip("A gradient for the ambient atmospheric colour throughout the day")]
+            public Gradient ambientColour; // atmospheric colour - set based on weather
+            [Tooltip("A gradient for the fog colour throughout the day")]
+            public Gradient fogColour; // set based on weather
+            [Tooltip("Fog transition smoothing")]
+            [Range(0, 1)] public float fogToDayColor;
+
+        }
+
+
+        void Start()
+        {
+            if (WeatherController.instance != null) weatherController = WeatherController.instance;
+
+            dayText.text = currentDay.ToString() + ", " + currentMonthData.month + " " + dayOfMonth + ", \n" + currentMonthData.season + ", " + currentYear;
+
+            if (currentMonthData.month == string.Empty)
+                ProgressMonth();
+
+
+
+            for (int i = 0; i < monthPresets.Length; i++)
+            {
+                daysInYear += monthPresets[i].daysInMonth;
+            }
+            Debug.Log("Days in year " + daysInYear);
+
+            //SetCalendar();
+        }
+
+        void Update()
+        {
+            if (Application.isPlaying)
+            {
+                timeScale = 24 / (secondsPerMinuteInGame / 60);
+
+                timeOfDay += Time.deltaTime * timeScale / 86400; // seconds in a day
+
+                timePercent = (timeOfDay %= 24f) / 24f;
+                UpdateLighting();
+
+                timeHours = (int)timeOfDay;
+                timeMinutes = Mathf.Clamp((timeOfDay - timeHours) * 60, 0f, 59.49f);
+                timeSeconds = Mathf.Clamp((timeMinutes - (int)timeMinutes) * 60, 0f, 59.49f);
+
+                hourlyTimePercent = (timeMinutes %= 60f) / 60f;
+
+                if (twelveHourTime)
                 {
-                    if (showSeconds)
-                        timeString = timeHours.ToString("00") + ":" + timeMinutes.ToString("00") + ":" + timeSeconds.ToString("00");
-                    else
-                        timeString = timeHours.ToString("00") + ":" + timeMinutes.ToString("00");
+                    if (timeOfDay < 12)
+                    {
+                        if (showSeconds)
+                            timeString = timeHours.ToString("00") + ":" + timeMinutes.ToString("00") + ":" + timeSeconds.ToString("00");
+                        else
+                            timeString = timeHours.ToString("00") + ":" + timeMinutes.ToString("00");
 
                         timeText.text = timeString + " am";
-                }
-                else if (timeOfDay > 12 && timeOfDay < 13)
-                {
-                    if (showSeconds)
-                        timeString = timeHours.ToString("00") + ":" + timeMinutes.ToString("00") + ":" + timeSeconds.ToString("00");
-                    else
-                        timeString = timeHours.ToString("00") + ":" + timeMinutes.ToString("00");
+                    }
+                    else if (timeOfDay > 12 && timeOfDay < 13)
+                    {
+                        if (showSeconds)
+                            timeString = timeHours.ToString("00") + ":" + timeMinutes.ToString("00") + ":" + timeSeconds.ToString("00");
+                        else
+                            timeString = timeHours.ToString("00") + ":" + timeMinutes.ToString("00");
 
-                    timeText.text = timeString + " pm";
-                }
-                else
-                {
-                    if (showSeconds)
-                        timeString = (timeHours - 12).ToString("00") + ":" + timeMinutes.ToString("00") + ":" + timeSeconds.ToString("00");
+                        timeText.text = timeString + " pm";
+                    }
                     else
-                        timeString = (timeHours - 12).ToString("00") + ":" + timeMinutes.ToString("00");
+                    {
+                        if (showSeconds)
+                            timeString = (timeHours - 12).ToString("00") + ":" + timeMinutes.ToString("00") + ":" + timeSeconds.ToString("00");
+                        else
+                            timeString = (timeHours - 12).ToString("00") + ":" + timeMinutes.ToString("00");
 
                         timeText.text = timeString + " pm";
 
 
-                    if (timeOfDay >= 23.9f)
-                    {
-                        isNewDay = true;
+                        if (timeOfDay >= 23.9f)
+                        {
+                            isNewDay = true;
+                        }
                     }
                 }
-            }
-            else
-            {
-                if (showSeconds)
-                    timeString = timeHours.ToString("00") + ":" + timeMinutes.ToString("00") + ":" + timeSeconds.ToString("00");
                 else
-                    timeString = timeHours.ToString("00") + ":" + timeMinutes.ToString("00");
+                {
+                    if (showSeconds)
+                        timeString = timeHours.ToString("00") + ":" + timeMinutes.ToString("00") + ":" + timeSeconds.ToString("00");
+                    else
+                        timeString = timeHours.ToString("00") + ":" + timeMinutes.ToString("00");
 
-                timeText.text = timeString;
-            }
+                    timeText.text = timeString;
+                }
 
-            if (isNewDay && timeOfDay < 1f)
-            {
-                ProgressDays();
+                if (isNewDay && timeOfDay < 1f)
+                {
+                    ProgressDays();
+                }
             }
         }
-    }
 
-    public void ProgressDays(int numToProgress = 1)
-    {
-        for (int n = 0; n < numToProgress; n++)
+        public void ProgressDays(int numToProgress = 1)
         {
-            if (currentDay < Day.Sunday)
-                currentDay++;
-            else
-                currentDay = Day.Monday;
-
-            dayCount++;
-
-            if (dayOfMonth < currentMonthData.daysInMonth)
+            for (int n = 0; n < numToProgress; n++)
             {
-                dayOfMonth++;
+                if (currentDay < Day.Sunday)
+                    currentDay++;
+                else
+                    currentDay = Day.Monday;
+
+                dayCount++;
+
+                if (dayOfMonth < currentMonthData.daysInMonth)
+                {
+                    dayOfMonth++;
+                }
+                else
+                {
+                    ProgressMonth();
+                }
+
+                dayText.text = currentDay.ToString() + ", " + currentMonthData.month + " " + dayOfMonth + ", \n" + currentMonthData.season + ", " + currentYear;
             }
-            else
-            {
-                ProgressMonth();
-            }
-
-            dayText.text = currentDay.ToString() + ", " + currentMonthData.month + " " + dayOfMonth + ", \n" + currentMonthData.season + ", " + currentYear;
-        }
-
-        if (weatherController != null)  weatherController.SetDailyConditions();
-
-        sunriseTimePercent = (sunriseTime %= 24) / 24f;
-        sunsetTimePercent = (sunsetTime %= 24) / 24f;
-
-        isNewDay = false;
-    }
-
-    public void RegressDays(int numToProgress = 1)
-    {
-        for (int n = 0; n < numToProgress; n++)
-        {
-            if (currentDay > Day.Monday)
-                currentDay--;
-            else
-                currentDay = Day.Sunday;
-
-            dayCount--;
-
-            if (dayOfMonth - 1 > 0)
-            {
-                dayOfMonth--;
-            }
-            else
-            {
-                RegressMonth();
-            }
-
-            dayText.text = currentDay.ToString() + ", " + currentMonthData.month + " " + dayOfMonth + ", \n" + currentMonthData.season + ", " + currentYear;
-        }
 
             if (weatherController != null) weatherController.SetDailyConditions();
 
@@ -306,364 +283,441 @@ public class TimeController : MonoBehaviour
             sunsetTimePercent = (sunsetTime %= 24) / 24f;
 
             isNewDay = false;
-        
-    }
+        }
 
-    public void ProgressMonth(int numToProgress = 1)
-    {
-        for (int n = 0; n < numToProgress; n++)
+        public void RegressDays(int numToProgress = 1)
         {
-            for (int i = 0; i < monthPresets.Length; i++)
+            for (int n = 0; n < numToProgress; n++)
             {
-                if (currentMonthData.month == string.Empty)
+                if (currentDay > Day.Monday)
+                    currentDay--;
+                else
+                    currentDay = Day.Sunday;
+
+                dayCount--;
+
+                if (dayOfMonth - 1 > 0)
                 {
-                    currentMonthData = monthPresets[i];
-                    if (weatherController != null)
-                    {
-                        weatherController.SetSeasonalConditions();
-                        weatherController.SetDailyConditions();
-                    }
-                    dayText.text = currentDay.ToString() + ", " + currentMonthData.month + " " + dayOfMonth + ", \n" + currentMonthData.season + ", " + currentYear;
+                    dayOfMonth--;
                 }
                 else
-                if (currentMonthData.month == monthPresets[i].month)
                 {
-                    if (i + 1 < monthPresets.Length)
+                    RegressMonth();
+                }
+
+                dayText.text = currentDay.ToString() + ", " + currentMonthData.month + " " + dayOfMonth + ", \n" + currentMonthData.season + ", " + currentYear;
+            }
+
+            if (weatherController != null) weatherController.SetDailyConditions();
+
+            sunriseTimePercent = (sunriseTime %= 24) / 24f;
+            sunsetTimePercent = (sunsetTime %= 24) / 24f;
+
+            isNewDay = false;
+
+        }
+
+        public void ProgressMonth(int numToProgress = 1)
+        {
+            for (int n = 0; n < numToProgress; n++)
+            {
+                for (int i = 0; i < monthPresets.Length; i++)
+                {
+                    if (currentMonthData.month == string.Empty)
                     {
-                        bool changeSeason = false;
-                        if (monthPresets[i + 1].season != currentMonthData.season) changeSeason = true;
-                        currentMonthData = monthPresets[i + 1];
-                        if (weatherController != null && changeSeason) weatherController.SetSeasonalConditions();
+                        currentMonthData = monthPresets[i];
+                        if (weatherController != null)
+                        {
+                            weatherController.SetSeasonalConditions();
+                            weatherController.SetDailyConditions();
+                        }
+                        dayText.text = currentDay.ToString() + ", " + currentMonthData.month + " " + dayOfMonth + ", \n" + currentMonthData.season + ", " + currentYear;
+                    }
+                    else
+                    if (currentMonthData.month == monthPresets[i].month)
+                    {
+                        if (i + 1 < monthPresets.Length)
+                        {
+                            bool changeSeason = false;
+                            if (monthPresets[i + 1].season != currentMonthData.season) changeSeason = true;
+                            currentMonthData = monthPresets[i + 1];
+                            if (weatherController != null && changeSeason) weatherController.SetSeasonalConditions();
+                            break;
+                        }
+                        else
+                        {
+                            bool changeSeason = false;
+                            if (monthPresets[0].season != currentMonthData.season) changeSeason = true;
+                            currentMonthData = monthPresets[0];
+                            currentYear += 1;
+                            dayCount = 0;
+                            if (weatherController != null && changeSeason) weatherController.SetSeasonalConditions();
+                            break;
+                        }
+                    }
+                }
+            }
+
+            dayOfMonth = 1;
+        }
+        public void RegressMonth(int numToProgress = 1)
+        {
+
+            for (int n = 0; n < numToProgress; n++)
+            {
+                for (int i = 0; i < monthPresets.Length; i++)
+                {
+                    dayCount += monthPresets[i].daysInMonth;
+
+                    if (currentMonthData.month == string.Empty)
+                    {
+                        currentMonthData = monthPresets[i];
+                        if (weatherController != null)
+                        {
+                            weatherController.SetSeasonalConditions();
+                            weatherController.SetDailyConditions();
+                        }
+                        dayText.text = currentDay.ToString() + ", " + currentMonthData.month + " " + dayOfMonth + ", \n" + currentMonthData.season + ", " + currentYear;
+
                         break;
                     }
                     else
+                    if (currentMonthData.month == monthPresets[i].month)
                     {
-                        bool changeSeason = false;
-                        if (monthPresets[0].season != currentMonthData.season) changeSeason = true;
-                        currentMonthData = monthPresets[0];
-                        currentYear += 1;
-                        dayCount = 0;
-                        if (weatherController != null && changeSeason) weatherController.SetSeasonalConditions();
-                        break;
+                        if (i - 1 > -1)
+                        {
+                            bool changeSeason = false;
+                            if (monthPresets[i - 1].season != currentMonthData.season) changeSeason = true;
+                            currentMonthData = monthPresets[i - 1];
+                            if (weatherController != null && changeSeason) weatherController.SetSeasonalConditions();
+                            break;
+                        }
+                        else
+                        {
+                            bool changeSeason = false;
+                            if (monthPresets[^1].season != currentMonthData.season) changeSeason = true;
+
+                            currentMonthData = monthPresets[^1];
+                            currentYear -= 1;
+
+                            if (weatherController != null && changeSeason) weatherController.SetSeasonalConditions();
+
+                            break;
+
+                        }
                     }
+
                 }
             }
+
+            dayOfMonth = currentMonthData.daysInMonth;
         }
 
-        dayOfMonth = 1;
-    }
-    public void RegressMonth(int numToProgress = 1)
-    {
+        // FINISH IMPLEMENTING CALENDAR EVENTS
 
-        for (int n = 0; n < numToProgress; n++)
+        //[System.Serializable]
+        //public class Calendar
+        //{
+        //    public List<CalendarMonth> months;
+        //}
+
+        //[System.Serializable]
+        //public class CalendarMonth
+        //{
+        //    public MonthData month;
+        //    public List<CalendarDay> days;
+        //}
+
+        //[System.Serializable]
+        //public class CalendarDay
+        //{
+        //    public Day day;
+        //    public int date;
+        //    // public event info triggered at specific time on a specific day
+        //    //Debug.log("Day!");
+        //}
+
+        //public Calendar SetCalendar()
+        //{
+        //    calendar = new Calendar();
+        //    calendar.months = new List<CalendarMonth>();
+        //    for (int i = 0; i < monthPresets.Length; i++)
+        //    {
+        //        CalendarMonth newMonth = new CalendarMonth();
+        //        newMonth.month = monthPresets[i];
+        //        calendar.months.Add(newMonth);
+        //        newMonth.days = new List<CalendarDay>();
+        //        for (int d = 0; d < newMonth.month.daysInMonth; d++)
+        //        {
+        //            CalendarDay newDay = new CalendarDay();
+        //            newDay.date = d + 1;
+        //            newDay.date = d + 1;
+        //            newMonth.days.Add(newDay);
+        //        }
+        //    }
+
+        //    return calendar;
+        //}
+
+        private void UpdateLighting()
         {
-            for (int i = 0; i < monthPresets.Length; i++)
-            {
-                dayCount += monthPresets[i].daysInMonth;
+            RenderSettings.ambientLight = skyData.ambientColour.Evaluate(timePercent);
+            sunLight.intensity = skyData.sunIntensityCurve.Evaluate(timePercent);
 
-                if (currentMonthData.month == string.Empty)
+            if (sunLight != null)
+            {
+                sunLight.transform.localRotation = Quaternion.Euler(new Vector3((timePercent * 360) - 90f, 170f, 0));
+            }
+
+
+            float seasonalAngle = -maxSeasonalTilt * Mathf.Cos(dayCount / (float)daysInYear * 2 * Mathf.PI);
+            seasonalRotation.localRotation = Quaternion.Euler(new Vector3(0f, 0f, seasonalAngle));
+
+            float dayLength = sunsetTimePercent - sunriseTimePercent;
+            float nightLength = 1 - dayLength;
+
+            //day night cal split
+            if (timePercent > sunriseTimePercent && timePercent < sunsetTimePercent)
+            {
+                dayLightTime = (timePercent - sunriseTimePercent) / dayLength;
+
+                // if both dayLightTime & nightLightTime are at 0
+                if (dayLightTime == 0) nightLightTime = 1;
+                else nightLightTime = 0;
+            }
+            else
+            {
+                if (timeOfDay < sunriseTime) // swap direction at midnight
                 {
-                    currentMonthData = monthPresets[i];
-                    if (weatherController != null)
-                    {
-                        weatherController.SetSeasonalConditions();
-                        weatherController.SetDailyConditions();
-                    }
-                    dayText.text = currentDay.ToString() + ", " + currentMonthData.month + " " + dayOfMonth + ", \n" + currentMonthData.season + ", " + currentYear;
-
-                    break;
+                    nightLightTime = 1 - ((sunriseTimePercent - timePercent) / nightLength);
                 }
-                else
-                if (currentMonthData.month == monthPresets[i].month)
+                else if (timeOfDay > sunsetTime)
                 {
-                    if (i - 1 > -1)
-                    {
-                        bool changeSeason = false;
-                        if (monthPresets[i - 1].season != currentMonthData.season) changeSeason = true;
-                        currentMonthData = monthPresets[i - 1];
-                        if (weatherController != null && changeSeason) weatherController.SetSeasonalConditions();
-                        break;
-                    }
-                    else
-                    {
-                        bool changeSeason = false;
-                        if (monthPresets[^1].season != currentMonthData.season) changeSeason = true;
-
-                        currentMonthData = monthPresets[^1];
-                        currentYear -= 1;
-
-                        if (weatherController != null && changeSeason) weatherController.SetSeasonalConditions();
-
-                        break;
-
-                    }
+                    nightLightTime = 1 - ((timePercent - sunsetTimePercent) / nightLength);
                 }
 
+                dayLightTime = 0;
             }
+
+            SkyOnUpdate();
         }
 
-        dayOfMonth = currentMonthData.daysInMonth;
-    }
-   
-    private void UpdateLighting()
-    {
-        RenderSettings.ambientLight = skyData.ambientColour.Evaluate(timePercent);
-        sunLight.intensity = skyData.sunIntensityCurve.Evaluate(timePercent);
-
-        if (sunLight != null)
+        private void OnValidate()
         {
-            sunLight.transform.localRotation = Quaternion.Euler(new Vector3((timePercent * 360) - 90f, 170f, 0));
-        }
-
-
-        float seasonalAngle = -maxSeasonalTilt * Mathf.Cos(dayCount / (float)daysInYear * 2 * Mathf.PI);
-        seasonalRotation.localRotation = Quaternion.Euler(new Vector3(0f, 0f, seasonalAngle));
-
-        float dayLength = sunsetTimePercent - sunriseTimePercent;
-        float nightLength = 1 - dayLength;
-
-        //day night cal split
-        if (timePercent > sunriseTimePercent && timePercent < sunsetTimePercent)
-        {
-            dayLightTime = (timePercent - sunriseTimePercent ) / dayLength;
-
-            // if both dayLightTime & nightLightTime are at 0
-            if (dayLightTime == 0) nightLightTime = 1;
-            else nightLightTime = 0;
-        }
-        else
-        {
-            if (timeOfDay < sunriseTime) // swap direction at midnight
-            {
-                nightLightTime = 1 - ((sunriseTimePercent - timePercent) / nightLength);
-            }
-            else if (timeOfDay > sunsetTime)
-            {
-                nightLightTime = 1 - ((timePercent - sunsetTimePercent) / nightLength);
-            }            
-
-            dayLightTime = 0;
-        }
-
-        SkyOnUpdate();
-    }
-
-    private void OnValidate()
-    {
-        if (sunLight != null)
-            return;
-
-        if (RenderSettings.sun != null)
-        {
-            sunLight = RenderSettings.sun;
-        }
-        else
-        {
-            Light[] lights = FindObjectsOfType<Light>();
-
-            foreach (Light light in lights)
-            {
-                sunLight = light;
+            if (sunLight != null)
                 return;
+
+            if (RenderSettings.sun != null)
+            {
+                sunLight = RenderSettings.sun;
             }
+            else
+            {
+                Light[] lights = FindObjectsOfType<Light>();
+
+                foreach (Light light in lights)
+                {
+                    sunLight = light;
+                    return;
+                }
+            }
+        }
+
+        public void SkyOnUpdate()
+        {
+            //visuals
+
+            float _fadeIntensity = Mathf.Lerp(0, 1, fadeToNight);
+            float _fadeIntensity_invert = Mathf.Lerp(1, 0, fadeToNight);
+
+            //fade sun light
+            bool AtDay = (fadeToNight < 1);
+            sunLight.enabled = AtDay;
+
+            float L_SunLightIntensity = Mathf.Lerp(sunLight.intensity, skyData.lightIntensity, GetSmoothLerp) * _fadeIntensity_invert;
+            sunLight.intensity = L_SunLightIntensity;
+
+            //fade moon light
+            bool AtNight = (fadeToNight > 0);
+            moonLight.enabled = AtNight;
+
+            float L_MoonLightIntensity = Mathf.Lerp(moonLight.intensity, skyData.moonLightIntensity, GetSmoothLerp) * _fadeIntensity;
+            moonLight.intensity = L_MoonLightIntensity;
+
+            SkyColor();
+            moon.SetActive(true);
+
+        }
+
+        //[Header("mat properties")]
+        private string _topColor = "_SkyColor1";
+        private string _midColor = "_SkyColor2";
+        private string _bottomColor = "_SkyColor3";
+        private string _nightOpacity = "_NightOpacity";
+        private string _sunScale = "_SunScale";
+        private string _sunIntensity = "_SunIntensity";
+        public void SkyColor()
+        {
+            SmoothNight();
+            //change direcrtional color on light over time
+
+            sunLight.color = Color.Lerp(sunLight.color, skyData.dayMidColorOverTime.Evaluate(dayLightTime), GetSmoothLerp);
+            moonLight.color = Color.Lerp(moonLight.color, skyData.nightMidColorOverTime.Evaluate(nightLightTime), GetSmoothLerp);
+            Color _timeFog;
+            //Color _weatherFog;
+
+            if (dayLightTime > 0)
+            {
+                //_topColor
+                if (RenderSettings.skybox.HasProperty(_topColor))
+                {
+                    Color L_topColor = Color.Lerp(RenderSettings.skybox.GetColor(_topColor), (skyData.dayTopColorOverTime.Evaluate(dayLightTime)), GetSmoothLerp);
+                    RenderSettings.skybox.SetColor(_topColor, L_topColor);
+                }
+                //_midColor
+                if (RenderSettings.skybox.HasProperty(_midColor))
+                {
+                    Color L_midColor = Color.Lerp(RenderSettings.skybox.GetColor(_midColor), (skyData.dayMidColorOverTime.Evaluate(dayLightTime)), GetSmoothLerp);
+                    RenderSettings.skybox.SetColor(_midColor, L_midColor);
+                }
+
+                _timeFog = Color.Lerp(skyData.fogColour.Evaluate(dayLightTime), skyData.dayMidColorOverTime.Evaluate(dayLightTime), skyData.fogToDayColor);
+            }
+            else
+            {
+                //_topColor
+                if (RenderSettings.skybox.HasProperty(_topColor))
+                {
+                    Color L_topColor = Color.Lerp(RenderSettings.skybox.GetColor(_topColor), (skyData.nightTopColorOverTime.Evaluate(nightLightTime)), GetSmoothLerp);
+                    RenderSettings.skybox.SetColor(_topColor, L_topColor);
+                }
+                //_midColor
+                if (RenderSettings.skybox.HasProperty(_midColor))
+                {
+                    Color L_midColor = Color.Lerp(RenderSettings.skybox.GetColor(_midColor), (skyData.nightMidColorOverTime.Evaluate(nightLightTime)), GetSmoothLerp);
+                    RenderSettings.skybox.SetColor(_midColor, L_midColor);
+                }
+                _timeFog = Color.Lerp(skyData.fogColour.Evaluate(dayLightTime), skyData.nightMidColorOverTime.Evaluate(nightLightTime), skyData.fogToDayColor);
+                //_weatherFog = Color.Lerp(_timeFog, weatherController.currentWeather.fogColour.Evaluate(timePercent), weatherController.currentWeather.fogStrength);
+            }
+
+            if (RenderSettings.skybox.HasProperty(_bottomColor))
+            {
+                //_bottomColor
+                RenderSettings.fogColor = Color.Lerp(RenderSettings.fogColor, _timeFog, GetSmoothLerp);
+                RenderSettings.skybox.SetColor(_bottomColor, RenderSettings.fogColor);
+            }
+            //nightsky
+            if (RenderSettings.skybox.HasProperty(_nightOpacity))
+            {
+                float L_nightOpacity = Mathf.Lerp(RenderSettings.skybox.GetFloat(_nightOpacity), smoothFadeNight, GetSmoothLerp);
+                RenderSettings.skybox.SetFloat(_nightOpacity, L_nightOpacity);
+            }
+            if (RenderSettings.skybox.HasProperty(_sunScale))
+            {
+                //sunscale
+                float L_sunScale = Mathf.Lerp(RenderSettings.skybox.GetFloat(_sunScale), skyData.sunSizeOverTime.Evaluate(timePercent), GetSmoothLerp);
+                RenderSettings.skybox.SetFloat(_sunScale, L_sunScale);
+            }
+            if (RenderSettings.skybox.HasProperty(_sunScale))
+            {
+                //sunintensity
+                float L_sunIntensity = Mathf.Lerp(RenderSettings.skybox.GetFloat(_sunIntensity), skyData.sunIntensityCurve.Evaluate(timePercent), GetSmoothLerp);
+                RenderSettings.skybox.SetFloat(_sunIntensity, L_sunIntensity);
+            }
+
+        }
+        public void SmoothNight()
+        {
+            //smooth the day night lerp
+            if (nightLightTime >= 0.95f)
+            {
+                fadeToNight = Mathf.Lerp(1, 0, (nightLightTime - 0.95f) / 0.05f);
+            }
+            else if (nightLightTime <= 0.05f)
+            {
+                fadeToNight = Mathf.Lerp(0, 1, nightLightTime / 0.05f);
+            }
+            else
+            {
+                fadeToNight = 1;
+            }
+
+            //smooth the day night lerp
+            if (nightLightTime >= 0.6f)
+            {
+                smoothFadeNight = Mathf.Lerp(1, 0, (nightLightTime - 0.6f) / 0.4f);
+            }
+            else if (nightLightTime <= 0.4f)
+            {
+                smoothFadeNight = Mathf.Lerp(0, 1, nightLightTime / 0.4f);
+            }
+            else
+            {
+                smoothFadeNight = 1;
+            }
+
         }
     }
 
-    public void SkyOnUpdate()
-    {
-        //visuals
+    //[CustomEditor(typeof(TimeController))]
+    //public class TimeControllerEditor : Editor
+    //{
+    //    string currentMonth;
+    //    public override void OnInspectorGUI()
+    //    {
+    //        TimeController timeController = (TimeController)target;
 
-        float _fadeIntensity = Mathf.Lerp(0, 1, fadeToNight);
-        float _fadeIntensity_invert = Mathf.Lerp(1, 0, fadeToNight);
+    //        if (timeController == null) return;
 
-        //fade sun light
-        bool AtDay = (fadeToNight < 1);
-        sunLight.enabled = AtDay;
+    //        GUILayout.Label("Current Time : " + GetTimeLabel() + ", " + timeController.timeText.text, EditorStyles.boldLabel);
+    //        GUILayout.Space(20);
+    //        DrawDefaultInspector();
 
-        float L_SunLightIntensity = Mathf.Lerp(sunLight.intensity, skyData.lightIntensity, GetSmoothLerp) * _fadeIntensity_invert;
-        sunLight.intensity = L_SunLightIntensity;
+    //    }
 
-        //fade moon light
-        bool AtNight = (fadeToNight > 0);
-        moonLight.enabled = AtNight;
+    //    string GetTimeLabel()
+    //    {
+    //        TimeController timeController = (TimeController)target;
 
-        float L_MoonLightIntensity = Mathf.Lerp(moonLight.intensity, skyData.moonLightIntensity, GetSmoothLerp) * _fadeIntensity;
-        moonLight.intensity = L_MoonLightIntensity;
+    //        string LabelReturn = string.Empty;
 
-        SkyColor();
-        moon.SetActive(true);
+    //        if (timeController.timeOfDay >= 0f && timeController.timeOfDay < 2f)
+    //        {
+    //            LabelReturn = "Midnight";
+    //        } 
+    //        else if (timeController.timeOfDay >= 2f && timeController.timeOfDay < 5f)
+    //        {
+    //            LabelReturn = "Early Morning";
+    //        }
+    //        else if (timeController.timeOfDay > 5f && timeController.timeOfDay < 12f)
+    //        {
+    //            LabelReturn = "Morning";
+    //        }
+    //        else if (timeController.timeOfDay > 12f && timeController.timeOfDay < 16f)
+    //        {
+    //            LabelReturn = "Midday";
+    //        }
+    //        else if (timeController.timeOfDay > 16f && timeController.timeOfDay <= 19f)
+    //        {
+    //            LabelReturn = "Evening";
+    //        }
+    //        else if (timeController.timeOfDay > 18f && timeController.timeOfDay < 21f)
+    //        {
+    //            LabelReturn = "Night";
+    //        }
+    //        else if (timeController.timeOfDay > 21f && timeController.timeOfDay < 23f)
+    //        {
+    //            LabelReturn = "Late Night";
+    //        }
+    //        else if (timeController.timeOfDay >= 23f)
+    //        {
 
-    }
+    //            LabelReturn = "Midnight";
+    //        }
 
-    //[Header("mat properties")]
-    private string _topColor = "_SkyColor1";
-    private string _midColor = "_SkyColor2";
-    private string _bottomColor = "_SkyColor3";
-    private string _nightOpacity = "_NightOpacity";
-    private string _sunScale = "_SunScale";
-    private string _sunIntensity = "_SunIntensity";
-    public void SkyColor()
-    {
-        SmoothNight();
-        //change direcrtional color on light over time
+    //        return LabelReturn;
+    //    }
+    //}
 
-        sunLight.color = Color.Lerp(sunLight.color, skyData.dayMidColorOverTime.Evaluate(dayLightTime), GetSmoothLerp);
-        moonLight.color = Color.Lerp(moonLight.color, skyData.nightMidColorOverTime.Evaluate(nightLightTime), GetSmoothLerp);
-        Color _timeFog;
-        //Color _weatherFog;
-
-        if (dayLightTime > 0)
-        {
-            //_topColor
-            if (RenderSettings.skybox.HasProperty(_topColor))
-            {
-                Color L_topColor = Color.Lerp(RenderSettings.skybox.GetColor(_topColor), (skyData.dayTopColorOverTime.Evaluate(dayLightTime)), GetSmoothLerp);
-                RenderSettings.skybox.SetColor(_topColor, L_topColor);
-            }
-            //_midColor
-            if (RenderSettings.skybox.HasProperty(_midColor))
-            {
-                Color L_midColor = Color.Lerp(RenderSettings.skybox.GetColor(_midColor), (skyData.dayMidColorOverTime.Evaluate(dayLightTime)), GetSmoothLerp);
-                RenderSettings.skybox.SetColor(_midColor, L_midColor);
-            }
-
-            _timeFog = Color.Lerp(skyData.fogColour.Evaluate(dayLightTime), skyData.dayMidColorOverTime.Evaluate(dayLightTime), skyData.fogToDayColor);
-        }
-        else
-        {
-            //_topColor
-            if (RenderSettings.skybox.HasProperty(_topColor))
-            {
-                Color L_topColor = Color.Lerp(RenderSettings.skybox.GetColor(_topColor), (skyData.nightTopColorOverTime.Evaluate(nightLightTime)), GetSmoothLerp);
-                RenderSettings.skybox.SetColor(_topColor, L_topColor);
-            }
-            //_midColor
-            if (RenderSettings.skybox.HasProperty(_midColor))
-            {
-                Color L_midColor = Color.Lerp(RenderSettings.skybox.GetColor(_midColor), (skyData.nightMidColorOverTime.Evaluate(nightLightTime)), GetSmoothLerp);
-                RenderSettings.skybox.SetColor(_midColor, L_midColor);
-            }
-            _timeFog = Color.Lerp(skyData.fogColour.Evaluate(dayLightTime), skyData.nightMidColorOverTime.Evaluate(nightLightTime), skyData.fogToDayColor);
-            //_weatherFog = Color.Lerp(_timeFog, weatherController.currentWeather.fogColour.Evaluate(timePercent), weatherController.currentWeather.fogStrength);
-        }
-
-        if (RenderSettings.skybox.HasProperty(_bottomColor))
-        {
-            //_bottomColor
-            RenderSettings.fogColor = Color.Lerp(RenderSettings.fogColor, _timeFog, GetSmoothLerp);
-            RenderSettings.skybox.SetColor(_bottomColor, RenderSettings.fogColor);
-        }
-        //nightsky
-        if (RenderSettings.skybox.HasProperty(_nightOpacity))
-        {
-            float L_nightOpacity = Mathf.Lerp(RenderSettings.skybox.GetFloat(_nightOpacity), smoothFadeNight, GetSmoothLerp);
-            RenderSettings.skybox.SetFloat(_nightOpacity, L_nightOpacity);
-        }
-        if (RenderSettings.skybox.HasProperty(_sunScale))
-        {
-            //sunscale
-            float L_sunScale = Mathf.Lerp(RenderSettings.skybox.GetFloat(_sunScale), skyData.sunSizeOverTime.Evaluate(timePercent), GetSmoothLerp);
-            RenderSettings.skybox.SetFloat(_sunScale, L_sunScale);
-        }
-        if (RenderSettings.skybox.HasProperty(_sunScale))
-        {
-            //sunintensity
-            float L_sunIntensity = Mathf.Lerp(RenderSettings.skybox.GetFloat(_sunIntensity), skyData.sunIntensityCurve.Evaluate(timePercent), GetSmoothLerp);
-            RenderSettings.skybox.SetFloat(_sunIntensity, L_sunIntensity);
-        }
-
-    }
-    public void SmoothNight()
-    {
-        //smooth the day night lerp
-        if (nightLightTime >= 0.95f)
-        {
-            fadeToNight = Mathf.Lerp(1, 0, (nightLightTime - 0.95f) / 0.05f);
-        }
-        else if (nightLightTime <= 0.05f)
-        {
-            fadeToNight = Mathf.Lerp(0, 1, nightLightTime / 0.05f);
-        }
-        else
-        {
-            fadeToNight = 1;
-        }
-
-        //smooth the day night lerp
-        if (nightLightTime >= 0.6f)
-        {
-            smoothFadeNight = Mathf.Lerp(1, 0, (nightLightTime - 0.6f) / 0.4f);
-        }
-        else if (nightLightTime <= 0.4f)
-        {
-            smoothFadeNight = Mathf.Lerp(0, 1, nightLightTime / 0.4f);
-        }
-        else
-        {
-            smoothFadeNight = 1;
-        }
-
-    }
 }
-
-//[CustomEditor(typeof(TimeController))]
-//public class TimeControllerEditor : Editor
-//{
-//    string currentMonth;
-//    public override void OnInspectorGUI()
-//    {
-//        TimeController timeController = (TimeController)target;
-
-//        if (timeController == null) return;
-
-//        GUILayout.Label("Current Time : " + GetTimeLabel() + ", " + timeController.timeText.text, EditorStyles.boldLabel);
-//        GUILayout.Space(20);
-//        DrawDefaultInspector();
-
-//    }
-
-//    string GetTimeLabel()
-//    {
-//        TimeController timeController = (TimeController)target;
-
-//        string LabelReturn = string.Empty;
-
-//        if (timeController.timeOfDay >= 0f && timeController.timeOfDay < 2f)
-//        {
-//            LabelReturn = "Midnight";
-//        } 
-//        else if (timeController.timeOfDay >= 2f && timeController.timeOfDay < 5f)
-//        {
-//            LabelReturn = "Early Morning";
-//        }
-//        else if (timeController.timeOfDay > 5f && timeController.timeOfDay < 12f)
-//        {
-//            LabelReturn = "Morning";
-//        }
-//        else if (timeController.timeOfDay > 12f && timeController.timeOfDay < 16f)
-//        {
-//            LabelReturn = "Midday";
-//        }
-//        else if (timeController.timeOfDay > 16f && timeController.timeOfDay <= 19f)
-//        {
-//            LabelReturn = "Evening";
-//        }
-//        else if (timeController.timeOfDay > 18f && timeController.timeOfDay < 21f)
-//        {
-//            LabelReturn = "Night";
-//        }
-//        else if (timeController.timeOfDay > 21f && timeController.timeOfDay < 23f)
-//        {
-//            LabelReturn = "Late Night";
-//        }
-//        else if (timeController.timeOfDay >= 23f)
-//        {
-
-//            LabelReturn = "Midnight";
-//        }
-
-//        return LabelReturn;
-//    }
-//}
-
-

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(WeatherDisplay))]
+namespace TimeWeather
+{
+    [CustomEditor(typeof(WeatherDisplay))]
 public class WeatherDisplayEditor : Editor
 {
     WeatherController weatherController;
@@ -290,4 +292,5 @@ public class WeatherDisplayEditor : Editor
         r.width += 6;
         EditorGUI.DrawRect(r, color);
     }
+}
 }

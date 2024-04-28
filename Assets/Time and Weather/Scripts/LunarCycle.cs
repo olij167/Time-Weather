@@ -2,50 +2,53 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LunarCycle : MonoBehaviour
+namespace TimeWeather
 {
-    private SpriteRenderer spriteRenderer; 
-    public Sprite[] moonPhases;
-
-    public int currentPhase = 0;
-    public int daysUntilNextPhase = 2;
-
-    private TimeController timeController;
-    private int currentDate;
-
-    private void Start()
+    public class LunarCycle : MonoBehaviour
     {
-        timeController = TimeController.instance;
-        currentDate = timeController.dayOfMonth;
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        private SpriteRenderer spriteRenderer;
+        public Sprite[] moonPhases;
 
-        spriteRenderer.sprite = moonPhases[currentPhase];
-    }
+        public int currentPhase = 0;
+        public int daysUntilNextPhase = 2;
 
-    private void Update()
-    {
-        if (currentDate != timeController.dayOfMonth)
+        private TimeController timeController;
+        private int currentDate;
+
+        private void Start()
         {
+            timeController = TimeController.instance;
             currentDate = timeController.dayOfMonth;
-            daysUntilNextPhase -= 1;
+            spriteRenderer = GetComponent<SpriteRenderer>();
+
+            spriteRenderer.sprite = moonPhases[currentPhase];
         }
 
-        if (daysUntilNextPhase == 0 && timeController.timeOfDay > 12f)
+        private void Update()
         {
-           UpdateMoonPhase();
-        }
-    }
+            if (currentDate != timeController.dayOfMonth)
+            {
+                currentDate = timeController.dayOfMonth;
+                daysUntilNextPhase -= 1;
+            }
 
-    public void UpdateMoonPhase()
-    {
-        if (currentPhase + 1 < moonPhases.Length)
+            if (daysUntilNextPhase == 0 && timeController.timeOfDay > 12f)
+            {
+                UpdateMoonPhase();
+            }
+        }
+
+        public void UpdateMoonPhase()
         {
-            currentPhase += 1;
+            if (currentPhase + 1 < moonPhases.Length)
+            {
+                currentPhase += 1;
+            }
+            else currentPhase = 0;
+
+            spriteRenderer.sprite = moonPhases[currentPhase];
+
+            daysUntilNextPhase = 2;
         }
-        else currentPhase = 0;
-
-        spriteRenderer.sprite = moonPhases[currentPhase];
-
-        daysUntilNextPhase = 2;
     }
 }
