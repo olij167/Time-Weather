@@ -56,28 +56,23 @@ PrefabInstance:
       objectReference: {fileID: 2311806105166531387}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
-      propertyPath: snowiness
-      value: 0.546
+      propertyPath: windSpeed
+      value: 23.223978
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: cloudPower
-      value: 2.42
+      value: 0.65715444
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: temperature
-      value: -13.618186
+      value: -15.249645
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: chanceOfRain
-      value: 58.65914
-      objectReference: {fileID: 0}
-    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
-        type: 3}
-      propertyPath: meltingSpeed
-      value: 0.05
+      value: 87.4944
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
@@ -88,12 +83,7 @@ PrefabInstance:
         type: 3}
       propertyPath: cloudRenderer
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
-        type: 3}
-      propertyPath: snowCoverSpeed
-      value: 0.3
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2453629483091544502}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: timeController
@@ -111,148 +101,173 @@ PrefabInstance:
       objectReference: {fileID: 2311806104121235659}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
+      propertyPath: currentWeatherPreset.volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: currentWeatherPreset.isRaining
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: currentWeatherPreset.snowiness
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: currentWeatherPreset.fogStrength
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: currentWeatherPreset.tempRange.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
       propertyPath: hourlyWeather.Array.data[0].temp
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[1].temp
-      value: 5
+      value: -18.508121
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[2].temp
-      value: 5
+      value: -17.965042
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[3].temp
-      value: 5
+      value: -17.421963
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[4].temp
-      value: 5
+      value: -16.878883
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[5].temp
-      value: -21.293917
+      value: -16.335804
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[6].temp
-      value: -18.004318
+      value: -15.792725
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[7].temp
-      value: -14.71472
+      value: -15.249645
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[8].temp
-      value: -11.425121
+      value: -14.706566
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[9].temp
-      value: -8.135523
+      value: -14.1634865
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[10].temp
-      value: -4.845924
+      value: -13.620407
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[11].temp
-      value: -1.556325
+      value: -13.077328
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[12].temp
-      value: 1.733274
+      value: -12.534248
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[13].temp
-      value: 1.733274
+      value: -11.991169
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[14].temp
-      value: -2.1045911
+      value: -11.991169
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[15].temp
-      value: -5.9424562
+      value: -13.077328
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[16].temp
-      value: -9.780321
+      value: -14.1634865
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[17].temp
-      value: -13.618186
+      value: -15.249645
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[18].temp
-      value: -17.45605
+      value: -16.335804
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[19].temp
-      value: -21.293917
+      value: -17.421963
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[20].temp
-      value: -21.293917
+      value: -18.508121
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[21].temp
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
-        type: 3}
-      propertyPath: hourlyWeather.Array.data[22].temp
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
-        type: 3}
-      propertyPath: hourlyWeather.Array.data[23].temp
-      value: 20
+      value: -18.508121
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[0].wetness
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[1].wetness
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[2].wetness
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[3].wetness
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
-      propertyPath: hourlyWeather.Array.data[12].wetness
-      value: 3
+      propertyPath: hourlyWeather.Array.data[4].wetness
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
-      propertyPath: hourlyWeather.Array.data[13].wetness
-      value: 3
+      propertyPath: currentWeatherPreset.clips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: currentWeatherPreset.weatherCondition
+      value: Snowstorm
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
@@ -262,22 +277,27 @@ PrefabInstance:
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[0].windSpeed
-      value: 0.8428011
+      value: -0.410017
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[1].windSpeed
-      value: 8.850318
+      value: -7.5954165
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[2].windSpeed
-      value: 14.015093
+      value: -7.3757076
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[3].snowiness
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[3].windSpeed
-      value: 11.2952175
+      value: -11.318805
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
@@ -286,13 +306,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
+      propertyPath: hourlyWeather.Array.data[4].snowiness
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
       propertyPath: hourlyWeather.Array.data[4].windSpeed
-      value: 15.337624
+      value: -3.1396887
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[5].isRaining
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[5].snowiness
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[5].windSpeed
-      value: 6.4537635
+      value: -3.4970222
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
@@ -301,53 +336,73 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
-      propertyPath: hourlyWeather.Array.data[6].windSpeed
-      value: -2.576829
-      objectReference: {fileID: 0}
-    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
-        type: 3}
-      propertyPath: hourlyWeather.Array.data[7].isRaining
+      propertyPath: hourlyWeather.Array.data[6].snowiness
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
+      propertyPath: hourlyWeather.Array.data[6].windSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[7].snowiness
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
       propertyPath: hourlyWeather.Array.data[7].windSpeed
-      value: 1.1276803
+      value: -3.117319
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[8].isRaining
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[8].windSpeed
-      value: 2.9586525
+      value: -3.6432595
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[9].isRaining
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[9].windSpeed
-      value: 10.259382
+      value: -0.7811971
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: currentWeatherPreset.cloudPowerRange.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: currentWeatherPreset.cloudPowerRange.y
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[0].cloudPower
-      value: 3.1468868
+      value: 1.123829
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
-      propertyPath: hourlyWeather.Array.data[10].isRaining
+      propertyPath: hourlyWeather.Array.data[10].snowiness
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[10].windSpeed
-      value: 18.584606
-      objectReference: {fileID: 0}
-    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
-        type: 3}
-      propertyPath: hourlyWeather.Array.data[11].isRaining
-      value: 0
+      value: 8.405704
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[11].windSpeed
-      value: 13.726261
+      value: 15.051306
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
@@ -357,12 +412,7 @@ PrefabInstance:
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[12].windSpeed
-      value: 21.995201
-      objectReference: {fileID: 0}
-    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
-        type: 3}
-      propertyPath: hourlyWeather.Array.data[13].isRaining
-      value: 0
+      value: 21.31592
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
@@ -372,37 +422,22 @@ PrefabInstance:
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[13].windSpeed
-      value: 29.496977
-      objectReference: {fileID: 0}
-    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
-        type: 3}
-      propertyPath: hourlyWeather.Array.data[14].isRaining
-      value: 0
+      value: 19.291456
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[14].windSpeed
-      value: 21.039087
-      objectReference: {fileID: 0}
-    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
-        type: 3}
-      propertyPath: hourlyWeather.Array.data[15].snowiness
-      value: 0.6
+      value: 23.742533
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[15].windSpeed
-      value: 19.197216
-      objectReference: {fileID: 0}
-    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
-        type: 3}
-      propertyPath: hourlyWeather.Array.data[16].isRaining
-      value: 0
+      value: 24.760504
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[16].windSpeed
-      value: 0
+      value: 33.07795
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
@@ -411,33 +446,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
-      propertyPath: hourlyWeather.Array.data[17].snowiness
-      value: 0.6
+      propertyPath: hourlyWeather.Array.data[17].windSpeed
+      value: 23.223978
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
-      propertyPath: hourlyWeather.Array.data[17].windSpeed
-      value: -4.101795
+      propertyPath: hourlyWeather.Array.data[18].snowiness
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[18].windSpeed
-      value: 5.2168736
+      value: 30.762955
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
-      propertyPath: hourlyWeather.Array.data[19].isRaining
+      propertyPath: hourlyWeather.Array.data[19].snowiness
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[19].windSpeed
-      value: 0
+      value: 40.58438
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[1].cloudPower
-      value: 2.9717984
+      value: 0.6755036
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
@@ -447,147 +482,182 @@ PrefabInstance:
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[20].snowiness
-      value: 0.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[20].windSpeed
-      value: 0.75792694
+      value: 34.93827
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[21].snowiness
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[21].windSpeed
-      value: -8.138157
+      value: 42.017876
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[22].isRaining
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[22].snowiness
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[22].windSpeed
-      value: -12.9274435
+      value: 34.01606
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
-      propertyPath: hourlyWeather.Array.data[23].snowiness
-      value: 0.6
+      propertyPath: hourlyWeather.Array.data[23].isRaining
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[23].windSpeed
-      value: -7.5520687
+      value: 38.079193
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[2].cloudPower
-      value: 3.359489
+      value: 1.3135008
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[3].cloudPower
-      value: 2.8085108
+      value: 1.4907678
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[4].cloudPower
-      value: 4.993385
+      value: 0.53925085
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[5].cloudPower
-      value: 4.5947437
+      value: 0.8263816
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[6].cloudPower
-      value: 4.5847206
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[7].cloudPower
-      value: 4.8737907
+      value: 1.1384239
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[8].cloudPower
-      value: 4.769077
+      value: 0.5223911
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[9].cloudPower
-      value: 3.4609826
+      value: 1.3481548
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[10].cloudPower
-      value: 2.8144073
+      value: 0.72869575
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[11].cloudPower
-      value: 3.2495003
+      value: 0.92027295
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[12].cloudPower
-      value: 2.710729
+      value: 0.7989653
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[13].cloudPower
-      value: 3.3031538
+      value: 0.93345606
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[14].cloudPower
-      value: 3.4828622
+      value: 0.6051812
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[15].cloudPower
-      value: 2.9090233
+      value: 1.2978423
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[16].cloudPower
-      value: 0
+      value: 1.2851958
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[17].cloudPower
-      value: 3.4602025
+      value: 0.65715444
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[18].cloudPower
-      value: 3.2870722
+      value: 1.3985395
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[19].cloudPower
-      value: 0
+      value: 0.89278686
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[20].cloudPower
-      value: 3.420338
+      value: 1.334587
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[21].cloudPower
-      value: 2.8459802
+      value: 1.089311
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[22].cloudPower
-      value: 2.990466
+      value: 1.3547246
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[23].cloudPower
-      value: 2.542463
+      value: 0.95600736
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: currentWeatherPreset.chanceOfRainRange.x
+      value: 66
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: currentWeatherPreset.chanceOfRainRange.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: currentWeatherPreset.clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f030e3e27811534c8d8f170419ac0cb, type: 3}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: currentWeatherPreset.clips.Array.data[1]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[0].chanceOfRain
-      value: 53.214287
+      value: 87
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
@@ -597,152 +667,132 @@ PrefabInstance:
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[1].chanceOfRain
-      value: 47.178574
+      value: 86
       objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[1].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f030e3e27811534c8d8f170419ac0cb, type: 3}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[2].chanceOfRain
-      value: 41.14286
+      value: 85
       objectReference: {fileID: 0}
-    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
-        type: 3}
-      propertyPath: hourlyWeather.Array.data[2].weatherAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: 0652e26d183e21344af5cb68583e510f, type: 3}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[3].chanceOfRain
-      value: 35.107147
+      value: 84
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
+      propertyPath: hourlyWeather.Array.data[3].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f030e3e27811534c8d8f170419ac0cb, type: 3}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
       propertyPath: hourlyWeather.Array.data[4].chanceOfRain
-      value: 29.071432
+      value: 83
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[4].weatherAudio
       value: 
-      objectReference: {fileID: 8300000, guid: 0652e26d183e21344af5cb68583e510f, type: 3}
+      objectReference: {fileID: 8300000, guid: bf5683e2c57093545b806a3f235f612c, type: 3}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[5].chanceOfRain
-      value: 23.035717
+      value: 83
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[5].weatherAudio
       value: 
-      objectReference: {fileID: 8300000, guid: 0652e26d183e21344af5cb68583e510f, type: 3}
+      objectReference: {fileID: 8300000, guid: 0f030e3e27811534c8d8f170419ac0cb, type: 3}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[6].chanceOfRain
-      value: 17
+      value: 61.039364
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[6].weatherAudio
       value: 
-      objectReference: {fileID: 8300000, guid: 0652e26d183e21344af5cb68583e510f, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[7].chanceOfRain
-      value: 17
+      value: 74.50027
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[7].weatherAudio
       value: 
-      objectReference: {fileID: 8300000, guid: 0652e26d183e21344af5cb68583e510f, type: 3}
+      objectReference: {fileID: 8300000, guid: 0f030e3e27811534c8d8f170419ac0cb, type: 3}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[8].chanceOfRain
-      value: 11.994835
+      value: 81.07173
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[8].weatherAudio
       value: 
-      objectReference: {fileID: 8300000, guid: 0652e26d183e21344af5cb68583e510f, type: 3}
+      objectReference: {fileID: 8300000, guid: 0f030e3e27811534c8d8f170419ac0cb, type: 3}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[9].chanceOfRain
-      value: 33.63912
+      value: 83.573135
       objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[9].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f030e3e27811534c8d8f170419ac0cb, type: 3}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[10].chanceOfRain
-      value: 45.80479
+      value: 84.776596
       objectReference: {fileID: 0}
-    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
-        type: 3}
-      propertyPath: hourlyWeather.Array.data[10].weatherAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: bf5683e2c57093545b806a3f235f612c, type: 3}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[11].chanceOfRain
-      value: 54.457436
+      value: 84.38123
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
-      propertyPath: hourlyWeather.Array.data[11].weatherAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: bf5683e2c57093545b806a3f235f612c, type: 3}
-    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
-        type: 3}
       propertyPath: hourlyWeather.Array.data[12].chanceOfRain
-      value: 49.04527
+      value: 86.00041
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[12].weatherAudio
       value: 
-      objectReference: {fileID: 8300000, guid: a82f5c71fbcb33947bc4b21dbbcfa7d5, type: 3}
+      objectReference: {fileID: 8300000, guid: 0f030e3e27811534c8d8f170419ac0cb, type: 3}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[13].chanceOfRain
-      value: 51.47597
+      value: 86.09471
       objectReference: {fileID: 0}
-    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
-        type: 3}
-      propertyPath: hourlyWeather.Array.data[13].weatherAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: 0652e26d183e21344af5cb68583e510f, type: 3}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[14].chanceOfRain
-      value: 54.098145
+      value: 87.31197
       objectReference: {fileID: 0}
-    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
-        type: 3}
-      propertyPath: hourlyWeather.Array.data[14].weatherAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: 0652e26d183e21344af5cb68583e510f, type: 3}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[15].chanceOfRain
-      value: 55.58505
+      value: 85.67409
       objectReference: {fileID: 0}
-    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
-        type: 3}
-      propertyPath: hourlyWeather.Array.data[15].weatherAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: bf5683e2c57093545b806a3f235f612c, type: 3}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[16].chanceOfRain
-      value: 55.522457
-      objectReference: {fileID: 0}
-    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
-        type: 3}
-      propertyPath: hourlyWeather.Array.data[16].weatherAudio
-      value: 
+      value: 87.245285
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[17].chanceOfRain
-      value: 58.65914
+      value: 87.4944
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
@@ -752,27 +802,17 @@ PrefabInstance:
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[18].chanceOfRain
-      value: 58.99641
+      value: 87.33313
       objectReference: {fileID: 0}
-    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
-        type: 3}
-      propertyPath: hourlyWeather.Array.data[18].weatherAudio
-      value: 
-      objectReference: {fileID: 8300000, guid: bf5683e2c57093545b806a3f235f612c, type: 3}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[19].chanceOfRain
-      value: 58.362743
-      objectReference: {fileID: 0}
-    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
-        type: 3}
-      propertyPath: hourlyWeather.Array.data[19].weatherAudio
-      value: 
+      value: 87.45528
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[20].chanceOfRain
-      value: 57.882156
+      value: 87.4295
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
@@ -782,22 +822,27 @@ PrefabInstance:
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[21].chanceOfRain
-      value: 59.146683
+      value: 86.47487
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[21].weatherAudio
       value: 
-      objectReference: {fileID: 8300000, guid: a82f5c71fbcb33947bc4b21dbbcfa7d5, type: 3}
+      objectReference: {fileID: 8300000, guid: 0f030e3e27811534c8d8f170419ac0cb, type: 3}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[22].chanceOfRain
-      value: 57.95099
+      value: 87.15365
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
+      propertyPath: hourlyWeather.Array.data[22].weatherAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: a82f5c71fbcb33947bc4b21dbbcfa7d5, type: 3}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
       propertyPath: hourlyWeather.Array.data[23].chanceOfRain
-      value: 56.7584
+      value: 87.93281
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
@@ -806,129 +851,214 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: a82f5c71fbcb33947bc4b21dbbcfa7d5, type: 3}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
-      propertyPath: seasonConditions.Array.data[1].tempRange.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
-        type: 3}
-      propertyPath: seasonConditions.Array.data[3].tempRange.x
-      value: 0
+      propertyPath: seasonConditions.Array.data[2].tempRange.x
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[0].weatherCondition
-      value: Raining
+      value: Storming
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[1].weatherCondition
+      value: Snowstorm
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[2].weatherCondition
+      value: Overcast
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: hourlyWeather.Array.data[3].weatherCondition
+      value: Snowstorm
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[4].weatherCondition
-      value: Clear
+      value: Overcast
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[5].weatherCondition
-      value: Clear
+      value: Snowstorm
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[6].weatherCondition
-      value: Clear
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[7].weatherCondition
-      value: Clear
+      value: Snowstorm
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[8].weatherCondition
-      value: Clear
+      value: Snowstorm
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[9].weatherCondition
-      value: Cloudy
-      objectReference: {fileID: 0}
-    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
-        type: 3}
-      propertyPath: hourlyWeather.Array.data[10].weatherCondition
-      value: Cloudy
-      objectReference: {fileID: 0}
-    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
-        type: 3}
-      propertyPath: hourlyWeather.Array.data[11].weatherCondition
-      value: Cloudy
+      value: Snowstorm
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[12].weatherCondition
-      value: Raining
-      objectReference: {fileID: 0}
-    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
-        type: 3}
-      propertyPath: hourlyWeather.Array.data[13].weatherCondition
-      value: Cloudy
-      objectReference: {fileID: 0}
-    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
-        type: 3}
-      propertyPath: hourlyWeather.Array.data[14].weatherCondition
-      value: Cloudy
-      objectReference: {fileID: 0}
-    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
-        type: 3}
-      propertyPath: hourlyWeather.Array.data[15].weatherCondition
-      value: Heavy Snowfall
-      objectReference: {fileID: 0}
-    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
-        type: 3}
-      propertyPath: hourlyWeather.Array.data[16].weatherCondition
-      value: 
+      value: Snowstorm
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[17].weatherCondition
-      value: Heavy Snowfall
-      objectReference: {fileID: 0}
-    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
-        type: 3}
-      propertyPath: hourlyWeather.Array.data[18].weatherCondition
-      value: Heavy Snowfall
+      value: Snowstorm
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[19].weatherCondition
-      value: 
+      value: Snowstorm
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[20].weatherCondition
-      value: Heavy Snowfall
+      value: Snowstorm
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[21].weatherCondition
-      value: Raining
+      value: Snowstorm
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[22].weatherCondition
-      value: Raining
+      value: Storming
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: hourlyWeather.Array.data[23].weatherCondition
-      value: Raining
+      value: Storming
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
-      propertyPath: seasonConditions.Array.data[1].chanceOfRainRange.x
-      value: 0
+      propertyPath: currentWeatherPreset.weatherParticles.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
-      propertyPath: seasonConditions.Array.data[1].chanceOfRainRange.y
-      value: 80
+      propertyPath: weatherDataPresets.Array.data[0].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: cd88cf1875956c843a22f3108a170bd6, type: 3}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: weatherDataPresets.Array.data[1].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: cd88cf1875956c843a22f3108a170bd6, type: 3}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: weatherDataPresets.Array.data[1].clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: fcaf626d813dbbf47ab8436660880df5, type: 3}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: weatherDataPresets.Array.data[2].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: cd88cf1875956c843a22f3108a170bd6, type: 3}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: weatherDataPresets.Array.data[2].clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: fcaf626d813dbbf47ab8436660880df5, type: 3}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: weatherDataPresets.Array.data[3].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3600a8b895b784c4189f73d720d2d4a4, type: 3}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: weatherDataPresets.Array.data[4].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3600a8b895b784c4189f73d720d2d4a4, type: 3}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: weatherDataPresets.Array.data[5].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3600a8b895b784c4189f73d720d2d4a4, type: 3}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: weatherDataPresets.Array.data[6].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: cd88cf1875956c843a22f3108a170bd6, type: 3}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: weatherDataPresets.Array.data[6].clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: fcaf626d813dbbf47ab8436660880df5, type: 3}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: weatherDataPresets.Array.data[7].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: fcaf626d813dbbf47ab8436660880df5, type: 3}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: weatherDataPresets.Array.data[7].clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 783201ba9e607aa4fa0f10327a8b2841, type: 3}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: weatherDataPresets.Array.data[8].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 783201ba9e607aa4fa0f10327a8b2841, type: 3}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: weatherDataPresets.Array.data[9].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 89970bacbdab28444a2a9450f3e08583, type: 3}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: weatherDataPresets.Array.data[9].clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: fcaf626d813dbbf47ab8436660880df5, type: 3}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: weatherDataPresets.Array.data[10].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 89970bacbdab28444a2a9450f3e08583, type: 3}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: weatherDataPresets.Array.data[10].clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: fcaf626d813dbbf47ab8436660880df5, type: 3}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: weatherDataPresets.Array.data[11].clips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 89970bacbdab28444a2a9450f3e08583, type: 3}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: weatherDataPresets.Array.data[11].clips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: fcaf626d813dbbf47ab8436660880df5, type: 3}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: currentWeatherPreset.weatherParticles.Array.data[0].noiseStrength
+      value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: currentWeatherPreset.weatherParticles.Array.data[0].particleAmount
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: currentWeatherPreset.weatherParticles.Array.data[0].particleSystem
+      value: 
+      objectReference: {fileID: 5152535710918290961}
+    - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
+        type: 3}
+      propertyPath: currentWeatherPreset.weatherParticles.Array.data[1].particleSystem
+      value: 
+      objectReference: {fileID: 5152535711752323760}
     - target: {fileID: 8697380267818737234, guid: 121fbc4bd20209741a44e19cae73452b,
         type: 3}
       propertyPath: weatherDataPresets.Array.data[3].weatherParticles.Array.data[0].particleSystem
@@ -1049,6 +1179,132 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5169165454233506676}
     m_Modifications:
+    - target: {fileID: 163806248, guid: a96146495d52ea5489d8e7c049c3cffe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5169165453950741203}
+    - target: {fileID: 238174526, guid: a96146495d52ea5489d8e7c049c3cffe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5169165453950741203}
+    - target: {fileID: 297535813, guid: a96146495d52ea5489d8e7c049c3cffe, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 297535814, guid: a96146495d52ea5489d8e7c049c3cffe, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207839630, guid: a96146495d52ea5489d8e7c049c3cffe, type: 3}
+      propertyPath: m_Pivot.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207839630, guid: a96146495d52ea5489d8e7c049c3cffe, type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207839630, guid: a96146495d52ea5489d8e7c049c3cffe, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207839630, guid: a96146495d52ea5489d8e7c049c3cffe, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207839630, guid: a96146495d52ea5489d8e7c049c3cffe, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207839630, guid: a96146495d52ea5489d8e7c049c3cffe, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207839630, guid: a96146495d52ea5489d8e7c049c3cffe, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207839630, guid: a96146495d52ea5489d8e7c049c3cffe, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207839630, guid: a96146495d52ea5489d8e7c049c3cffe, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207839630, guid: a96146495d52ea5489d8e7c049c3cffe, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207839631, guid: a96146495d52ea5489d8e7c049c3cffe, type: 3}
+      propertyPath: m_text
+      value: 'Toggle Controls [X]
+
+        Quit [Esc]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207839631, guid: a96146495d52ea5489d8e7c049c3cffe, type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207839631, guid: a96146495d52ea5489d8e7c049c3cffe, type: 3}
+      propertyPath: m_fontStyle
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207839631, guid: a96146495d52ea5489d8e7c049c3cffe, type: 3}
+      propertyPath: m_fontColor.a
+      value: 0.7490196
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207839631, guid: a96146495d52ea5489d8e7c049c3cffe, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.3372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207839631, guid: a96146495d52ea5489d8e7c049c3cffe, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.3019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207839631, guid: a96146495d52ea5489d8e7c049c3cffe, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.7254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207839631, guid: a96146495d52ea5489d8e7c049c3cffe, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207839631, guid: a96146495d52ea5489d8e7c049c3cffe, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 3210104249
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207839631, guid: a96146495d52ea5489d8e7c049c3cffe, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1565913992, guid: a96146495d52ea5489d8e7c049c3cffe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5169165453950741203}
+    - target: {fileID: 2011835622, guid: a96146495d52ea5489d8e7c049c3cffe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5169165453950741203}
+    - target: {fileID: 642129855813450818, guid: a96146495d52ea5489d8e7c049c3cffe,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 642129855813450818, guid: a96146495d52ea5489d8e7c049c3cffe,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.5137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 642129855813450818, guid: a96146495d52ea5489d8e7c049c3cffe,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.17254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 642129855813450818, guid: a96146495d52ea5489d8e7c049c3cffe,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.15294118
+      objectReference: {fileID: 0}
     - target: {fileID: 7469712497239501107, guid: a96146495d52ea5489d8e7c049c3cffe,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1159,10 +1415,45 @@ PrefabInstance:
       propertyPath: m_Name
       value: Time & Weather System Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 7469712498485506523, guid: a96146495d52ea5489d8e7c049c3cffe,
+    - target: {fileID: 7469712498449682535, guid: a96146495d52ea5489d8e7c049c3cffe,
         type: 3}
-      propertyPath: m_text
-      value: "Saturday, April 19, \nAutumn, 1999"
+      propertyPath: m_AnchoredPosition.x
+      value: 375
+      objectReference: {fileID: 0}
+    - target: {fileID: 7891181640092421344, guid: a96146495d52ea5489d8e7c049c3cffe,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7891181640092421344, guid: a96146495d52ea5489d8e7c049c3cffe,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7891181640092421344, guid: a96146495d52ea5489d8e7c049c3cffe,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7891181640092421344, guid: a96146495d52ea5489d8e7c049c3cffe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7966406761212199050, guid: a96146495d52ea5489d8e7c049c3cffe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7966406761212199050, guid: a96146495d52ea5489d8e7c049c3cffe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 8835038443240553018, guid: a96146495d52ea5489d8e7c049c3cffe,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a96146495d52ea5489d8e7c049c3cffe, type: 3}
@@ -1172,18 +1463,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 5169165452975504154}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2311806104057899497 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7469712497237299955, guid: a96146495d52ea5489d8e7c049c3cffe,
-    type: 3}
-  m_PrefabInstance: {fileID: 5169165452975504154}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2311806104121235659 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7469712497309295569, guid: a96146495d52ea5489d8e7c049c3cffe,
@@ -1220,9 +1499,108 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2311806105289050817 stripped
+--- !u!1 &3684927319998634916 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8403696323902431422, guid: a96146495d52ea5489d8e7c049c3cffe,
+    type: 3}
+  m_PrefabInstance: {fileID: 5169165452975504154}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &330113705
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7469712498485506523, guid: a96146495d52ea5489d8e7c049c3cffe,
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3684927319998634916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 2
+  m_VerticalFit: 2
+--- !u!114 &4424475247658219855 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8852515956841136725, guid: a96146495d52ea5489d8e7c049c3cffe,
+    type: 3}
+  m_PrefabInstance: {fileID: 5169165452975504154}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5166621160202450611 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4246338320551337, guid: a96146495d52ea5489d8e7c049c3cffe,
+    type: 3}
+  m_PrefabInstance: {fileID: 5169165452975504154}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5169165452683735644 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 297535814, guid: a96146495d52ea5489d8e7c049c3cffe,
+    type: 3}
+  m_PrefabInstance: {fileID: 5169165452975504154}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5169165453016621450 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 93690512, guid: a96146495d52ea5489d8e7c049c3cffe,
+    type: 3}
+  m_PrefabInstance: {fileID: 5169165452975504154}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &5169165454122242199 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1207839629, guid: a96146495d52ea5489d8e7c049c3cffe,
+    type: 3}
+  m_PrefabInstance: {fileID: 5169165452975504154}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1428228682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5169165454122242199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8fbafb6ee2e5ec468dcbea788761382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  demoUI: {fileID: 3684927319998634916}
+--- !u!114 &6895476704154214683 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1733101976784509441, guid: a96146495d52ea5489d8e7c049c3cffe,
+    type: 3}
+  m_PrefabInstance: {fileID: 5169165452975504154}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9159919117717646692 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4080825794762233470, guid: a96146495d52ea5489d8e7c049c3cffe,
     type: 3}
   m_PrefabInstance: {fileID: 5169165452975504154}
   m_PrefabAsset: {fileID: 0}
@@ -1239,46 +1617,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5169165454233506676}
     m_Modifications:
-    - target: {fileID: 17428881140310426, guid: 2daeeff78881540468dbf884575b75b2,
-        type: 3}
-      propertyPath: ShapeModule.m_Scale.x
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 17428881140310426, guid: 2daeeff78881540468dbf884575b75b2,
-        type: 3}
-      propertyPath: ShapeModule.m_Scale.z
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 17428881140310427, guid: 2daeeff78881540468dbf884575b75b2,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 17428881447111996, guid: 2daeeff78881540468dbf884575b75b2,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 17428882637744337, guid: 2daeeff78881540468dbf884575b75b2,
-        type: 3}
-      propertyPath: ShapeModule.m_Scale.x
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 17428882637744337, guid: 2daeeff78881540468dbf884575b75b2,
-        type: 3}
-      propertyPath: ShapeModule.m_Scale.z
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 17428882637744338, guid: 2daeeff78881540468dbf884575b75b2,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 17428882637744338, guid: 2daeeff78881540468dbf884575b75b2,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 2767325707503673870, guid: 2daeeff78881540468dbf884575b75b2,
         type: 3}
       propertyPath: m_Name
@@ -1339,6 +1677,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9050361177642165531, guid: 2daeeff78881540468dbf884575b75b2,
+        type: 3}
+      propertyPath: killAudio.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5ec6560564b3739449e14997b2f19a50, type: 3}
+    - target: {fileID: 9050361177642165531, guid: 2daeeff78881540468dbf884575b75b2,
+        type: 3}
+      propertyPath: killAudio.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 98711738811b09541a103cc073c52022, type: 3}
+    - target: {fileID: 9050361177642165531, guid: 2daeeff78881540468dbf884575b75b2,
+        type: 3}
+      propertyPath: killAudio.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1b4e40bfda0fea042835d7e2b82804f9, type: 3}
+    - target: {fileID: 9050361177642165531, guid: 2daeeff78881540468dbf884575b75b2,
+        type: 3}
+      propertyPath: killAudio.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5572117c39a694c449ebad82fbf9a196, type: 3}
+    - target: {fileID: 9050361177642165531, guid: 2daeeff78881540468dbf884575b75b2,
+        type: 3}
+      propertyPath: killAudio.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 95e3a60ce4a6a9043823125bf62d2880, type: 3}
+    - target: {fileID: 9050361177642165531, guid: 2daeeff78881540468dbf884575b75b2,
+        type: 3}
+      propertyPath: killAudio.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 28e244d1fbaff794ca04adffba89f471, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2daeeff78881540468dbf884575b75b2, type: 3}
 --- !u!4 &1045597975308245502 stripped
@@ -1543,8 +1911,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud Plane
       objectReference: {fileID: 0}
+    - target: {fileID: 8743452463889552044, guid: 4efab63962e24a748a3775c564e2b5f8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4efab63962e24a748a3775c564e2b5f8, type: 3}
+--- !u!23 &2453629483091544502 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8743452463889552044, guid: 4efab63962e24a748a3775c564e2b5f8,
+    type: 3}
+  m_PrefabInstance: {fileID: 6583119932907477786}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6040769976140972736 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 616659973556148698, guid: 4efab63962e24a748a3775c564e2b5f8,
@@ -1622,12 +2001,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dayText
       value: 
-      objectReference: {fileID: 2311806105289050817}
-    - target: {fileID: 1898008734982147876, guid: 2f16708e9513a8141a6a4d7477356c3e,
-        type: 3}
-      propertyPath: dayCount
-      value: 18
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 4424475247658219855}
     - target: {fileID: 1898008734982147876, guid: 2f16708e9513a8141a6a4d7477356c3e,
         type: 3}
       propertyPath: sunLight
@@ -1637,7 +2011,7 @@ PrefabInstance:
         type: 3}
       propertyPath: timeText
       value: 
-      objectReference: {fileID: 2311806104057899497}
+      objectReference: {fileID: 6895476704154214683}
     - target: {fileID: 1898008734982147876, guid: 2f16708e9513a8141a6a4d7477356c3e,
         type: 3}
       propertyPath: moonLight
@@ -1645,49 +2019,29 @@ PrefabInstance:
       objectReference: {fileID: 6755425952280528562}
     - target: {fileID: 1898008734982147876, guid: 2f16708e9513a8141a6a4d7477356c3e,
         type: 3}
-      propertyPath: timeOfDay
-      value: 3.86
-      objectReference: {fileID: 0}
+      propertyPath: sunsetText
+      value: 
+      objectReference: {fileID: 5166621160202450611}
     - target: {fileID: 1898008734982147876, guid: 2f16708e9513a8141a6a4d7477356c3e,
         type: 3}
-      propertyPath: currentDay
-      value: 5
-      objectReference: {fileID: 0}
+      propertyPath: sunriseText
+      value: 
+      objectReference: {fileID: 9159919117717646692}
     - target: {fileID: 1898008734982147876, guid: 2f16708e9513a8141a6a4d7477356c3e,
         type: 3}
-      propertyPath: dayOfMonth
-      value: 19
-      objectReference: {fileID: 0}
+      propertyPath: timeOfDaySlider
+      value: 
+      objectReference: {fileID: 5169165452683735644}
     - target: {fileID: 1898008734982147876, guid: 2f16708e9513a8141a6a4d7477356c3e,
         type: 3}
-      propertyPath: currentYear
-      value: 1999
-      objectReference: {fileID: 0}
+      propertyPath: timeScaleSlider
+      value: 
+      objectReference: {fileID: 5169165453016621450}
     - target: {fileID: 1898008734982147876, guid: 2f16708e9513a8141a6a4d7477356c3e,
         type: 3}
       propertyPath: seasonalRotation
       value: 
       objectReference: {fileID: 4036933613262108550}
-    - target: {fileID: 1898008734982147876, guid: 2f16708e9513a8141a6a4d7477356c3e,
-        type: 3}
-      propertyPath: currentMonthData.month
-      value: April
-      objectReference: {fileID: 0}
-    - target: {fileID: 1898008734982147876, guid: 2f16708e9513a8141a6a4d7477356c3e,
-        type: 3}
-      propertyPath: secondsPerMinuteInGame
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1898008734982147876, guid: 2f16708e9513a8141a6a4d7477356c3e,
-        type: 3}
-      propertyPath: currentMonthData.season
-      value: Autumn
-      objectReference: {fileID: 0}
-    - target: {fileID: 1898008734982147876, guid: 2f16708e9513a8141a6a4d7477356c3e,
-        type: 3}
-      propertyPath: currentMonthData.daysInMonth
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 1898008734982147877, guid: 2f16708e9513a8141a6a4d7477356c3e,
         type: 3}
       propertyPath: m_Name

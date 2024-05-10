@@ -116,6 +116,17 @@ namespace TimeWeather
         public TextMeshProUGUI dayText;
         [HideInInspector] public string timeString;
 
+        [Tooltip("A slider for controlling the speed that time passes during runtime")]
+        public UnityEngine.UI.Slider timeScaleSlider;
+        [Tooltip("A slider for controlling the time of day during runtime")]
+        public UnityEngine.UI.Slider timeOfDaySlider;
+
+        [Tooltip("Text for displaying the current day's sunrise time")]
+        public TextMeshProUGUI sunriseText;
+        [Tooltip("Text for displaying the current day's sunrise time")]
+        public TextMeshProUGUI sunsetText;
+
+
         [Header("Debug")]
         private bool useSmoothLerp = true;
         [Range(0, 10)] public float smoothLerp = 0.5f;
@@ -168,7 +179,8 @@ namespace TimeWeather
         {
             if (WeatherController.instance != null) weatherController = WeatherController.instance;
 
-            dayText.text = currentDay.ToString() + ", " + currentMonthData.month + " " + dayOfMonth + ", \n" + currentMonthData.season + ", " + currentYear;
+            if (dayText != null)
+                dayText.text = currentDay.ToString() + ", " + currentMonthData.month + " " + dayOfMonth + ", \n" + currentMonthData.season + ", " + currentYear;
 
             if (currentMonthData.month == string.Empty)
                 ProgressMonth();
@@ -182,15 +194,49 @@ namespace TimeWeather
             Debug.Log("Days in year " + daysInYear);
 
             //SetCalendar();
+
+            if (timeScaleSlider != null)
+            {
+                timeScaleSlider.minValue = 0.001f;
+                timeScaleSlider.maxValue = 1f;
+
+                timeScaleSlider.value = secondsPerMinuteInGame;
+            }
+
+            if (timeOfDaySlider != null)
+            {
+                timeOfDaySlider.minValue = 0f;
+                timeOfDaySlider.maxValue = 24f;
+
+                timeOfDaySlider.value = timeOfDay;
+            }
         }
 
         void Update()
         {
+
+
             if (Application.isPlaying)
             {
-                timeScale = 24 / (secondsPerMinuteInGame / 60);
+
+            if (timeScaleSlider != null)
+                    secondsPerMinuteInGame = timeScaleSlider.value;
+
+                //if (timeOfDay <= 23.9f)
+                if (timeOfDaySlider != null)
+                {
+                    if (timeOfDaySlider.value <= 23.99f && timeOfDay <= 23.99f)
+                        timeOfDay = timeOfDaySlider.value;
+                    else
+                        timeOfDaySlider.value = timeOfDay;
+                }
+
+                    timeScale = 24 / (secondsPerMinuteInGame / 60);
 
                 timeOfDay += Time.deltaTime * timeScale / 86400; // seconds in a day
+
+            if (timeOfDaySlider != null)
+                    timeOfDaySlider.value = timeOfDay;
 
                 timePercent = (timeOfDay %= 24f) / 24f;
                 UpdateLighting();
@@ -210,7 +256,8 @@ namespace TimeWeather
                         else
                             timeString = timeHours.ToString("00") + ":" + timeMinutes.ToString("00");
 
-                        timeText.text = timeString + " am";
+                        if (timeText != null)
+                            timeText.text = timeString + " am";
                     }
                     else if (timeOfDay > 12 && timeOfDay < 13)
                     {
@@ -219,7 +266,8 @@ namespace TimeWeather
                         else
                             timeString = timeHours.ToString("00") + ":" + timeMinutes.ToString("00");
 
-                        timeText.text = timeString + " pm";
+                        if (timeText != null)
+                            timeText.text = timeString + " pm";
                     }
                     else
                     {
@@ -228,12 +276,14 @@ namespace TimeWeather
                         else
                             timeString = (timeHours - 12).ToString("00") + ":" + timeMinutes.ToString("00");
 
-                        timeText.text = timeString + " pm";
+                        if (timeText != null)
+                            timeText.text = timeString + " pm";
 
 
                         if (timeOfDay >= 23.9f)
                         {
                             isNewDay = true;
+                            //timeOfDaySlider.value = 0f;
                         }
                     }
                 }
@@ -244,12 +294,13 @@ namespace TimeWeather
                     else
                         timeString = timeHours.ToString("00") + ":" + timeMinutes.ToString("00");
 
-                    timeText.text = timeString;
+                    if (timeText != null)
+                        timeText.text = timeString;
                 }
 
                 if (isNewDay && timeOfDay < 1f)
                 {
-                    ProgressDays();
+                    ProgressDays(1);
                 }
             }
         }
@@ -271,10 +322,11 @@ namespace TimeWeather
                 }
                 else
                 {
-                    ProgressMonth();
+                    ProgressMonth(1);
                 }
 
-                dayText.text = currentDay.ToString() + ", " + currentMonthData.month + " " + dayOfMonth + ", \n" + currentMonthData.season + ", " + currentYear;
+                if (dayText != null)
+                    dayText.text = currentDay.ToString() + ", " + currentMonthData.month + " " + dayOfMonth + ", \n" + currentMonthData.season + ", " + currentYear;
             }
 
             if (weatherController != null) weatherController.SetDailyConditions();
@@ -302,10 +354,11 @@ namespace TimeWeather
                 }
                 else
                 {
-                    RegressMonth();
+                    RegressMonth(1);
                 }
 
-                dayText.text = currentDay.ToString() + ", " + currentMonthData.month + " " + dayOfMonth + ", \n" + currentMonthData.season + ", " + currentYear;
+                if (dayText != null)
+                    dayText.text = currentDay.ToString() + ", " + currentMonthData.month + " " + dayOfMonth + ", \n" + currentMonthData.season + ", " + currentYear;
             }
 
             if (weatherController != null) weatherController.SetDailyConditions();
@@ -313,7 +366,7 @@ namespace TimeWeather
             sunriseTimePercent = (sunriseTime %= 24) / 24f;
             sunsetTimePercent = (sunsetTime %= 24) / 24f;
 
-            isNewDay = false;
+            //isNewDay = false;
 
         }
 
@@ -331,7 +384,6 @@ namespace TimeWeather
                             weatherController.SetSeasonalConditions();
                             weatherController.SetDailyConditions();
                         }
-                        dayText.text = currentDay.ToString() + ", " + currentMonthData.month + " " + dayOfMonth + ", \n" + currentMonthData.season + ", " + currentYear;
                     }
                     else
                     if (currentMonthData.month == monthPresets[i].month)
@@ -358,7 +410,13 @@ namespace TimeWeather
                 }
             }
 
-            dayOfMonth = 1;
+            if (dayOfMonth > currentMonthData.daysInMonth)
+                dayOfMonth = 1;
+
+            ProgressDays(0);
+
+            if (dayText != null)
+                dayText.text = currentDay.ToString() + ", " + currentMonthData.month + " " + dayOfMonth + ", \n" + currentMonthData.season + ", " + currentYear;
         }
         public void RegressMonth(int numToProgress = 1)
         {
@@ -377,7 +435,6 @@ namespace TimeWeather
                             weatherController.SetSeasonalConditions();
                             weatherController.SetDailyConditions();
                         }
-                        dayText.text = currentDay.ToString() + ", " + currentMonthData.month + " " + dayOfMonth + ", \n" + currentMonthData.season + ", " + currentYear;
 
                         break;
                     }
@@ -410,7 +467,13 @@ namespace TimeWeather
                 }
             }
 
-            dayOfMonth = currentMonthData.daysInMonth;
+            if (dayOfMonth > currentMonthData.daysInMonth)
+                dayOfMonth = currentMonthData.daysInMonth;
+
+            RegressDays(0);
+
+            if (dayText != null)
+                dayText.text = currentDay.ToString() + ", " + currentMonthData.month + " " + dayOfMonth + ", \n" + currentMonthData.season + ", " + currentYear;
         }
 
         // FINISH IMPLEMENTING CALENDAR EVENTS

@@ -368,9 +368,4 @@ MonoBehaviour:
   timeText: {fileID: 0}
   dayText: {fileID: 0}
   timeString: 
-  useSmoothLerp: 1
   smoothLerp: 0.5
-  dayLightTime: 0
-  nightLightTime: 1
-  fadeToNight: 0
-  smoothFadeNight: 0

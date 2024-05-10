@@ -907,7 +907,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 5
+    type: 15
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -915,7 +915,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 25, y: 25, z: 1}
+    m_Scale: {x: 150, y: 150, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -5074,5 +5074,10 @@ MonoBehaviour:
   particles: {fileID: 9053568905342574662}
   bornAudio: []
   killAudio:
-  - {fileID: 8300000, guid: 8a54f00061717d3469c6f6eab85641f1, type: 3}
+  - {fileID: 8300000, guid: 0e44d31b00f5ee84f8084855c5b56c58, type: 3}
+  - {fileID: 8300000, guid: d42ea94b8ae78d74dba8cb600accf1c9, type: 3}
+  - {fileID: 8300000, guid: 7af389c50f3d38d46b2583c7b75414af, type: 3}
+  - {fileID: 8300000, guid: f60b5f20592c1b246b60ba90338e5f1b, type: 3}
+  - {fileID: 8300000, guid: 92cf20aa733c83940839a03d95c29fb0, type: 3}
+  - {fileID: 8300000, guid: 34d6750e052e96146b7169ac4be17018, type: 3}
   audioSource: {fileID: 1118441284}

@@ -218,6 +218,15 @@ namespace TimeWeather
             timeController.sunriseTimePercent = (timeController.sunriseTime %= 24) / 24f;
             timeController.sunsetTimePercent = (timeController.sunsetTime %= 24) / 24f;
 
+            int sunriseHour = (int)timeController.sunriseTime;
+            float sunriseTimeClamped = Mathf.Clamp((timeController.sunriseTime - sunriseHour) * 60, 0f, 59.49f);
+
+              int sunsetHour = (int)timeController.sunsetTime;
+            float sunsetTimeClamped = Mathf.Clamp((timeController.sunsetTime - sunsetHour) * 60, 0f, 59.49f);
+
+            timeController.sunriseText.text = sunriseHour.ToString("00") + ":" + sunriseTimeClamped.ToString("00") + " AM \n Sunrise";
+            timeController.sunsetText.text = sunsetHour.ToString("00") + ":" + sunsetTimeClamped.ToString("00") + " PM \n Sunset";
+
             float lowestRainChance = Random.Range((int)currentSeasonConditions.chanceOfRainRange.x, (int)currentSeasonConditions.chanceOfRainRange.y);
             float highestRainChance = Random.Range((int)lowestRainChance, (int)currentSeasonConditions.chanceOfRainRange.y);
             int heighestRainTime = Random.Range(0, 23);
@@ -407,7 +416,9 @@ namespace TimeWeather
                     float hourlyTimePercent = timeController.hourlyTimePercent;
 
                     temperature = Mathf.Lerp(hourlyWeather[timeController.timeHours].temp, hourlyWeather[timeController.timeHours + 1].temp, hourlyTimePercent);
-                    tempText.text = temperature.ToString("00") + "°C";
+
+                    if (tempText != null)
+                        tempText.text = temperature.ToString("00") + "°C";
 
                     //weatherCondition = hourlyWeather[timeController.timeHours].weatherCondition;
                     for (int w = 0; w < weatherDataPresets.Length; w++)
@@ -419,29 +430,33 @@ namespace TimeWeather
                                 if (hourlyWeather[timeController.timeHours].isRaining == weatherDataPresets[w].isRaining)
                                 {
                                     weatherCondition = weatherDataPresets[w].weatherCondition;
-                                    weatherConditionText.text = hourlyWeather[timeController.timeHours].weatherCondition;
+                                    if (weatherConditionText != null)
+                                        weatherConditionText.text = hourlyWeather[timeController.timeHours].weatherCondition;
                                     break;
                                 }
                             }
                         }
                     }
-                    weatherConditionText.text = weatherCondition;
+                    if (weatherConditionText != null)
+                        weatherConditionText.text = weatherCondition;
 
                     chanceOfRain = Mathf.Lerp(hourlyWeather[timeController.timeHours].chanceOfRain, hourlyWeather[timeController.timeHours + 1].chanceOfRain, hourlyTimePercent);
-                    chanceOfRainText.text = chanceOfRain.ToString("00") + "% Chance of Rain";
+                    if (chanceOfRainText != null)
 
-#if !UNITY_EDITOR
-                cloudPower = Mathf.Lerp(hourlyWeather[timeController.timeHours].cloudPower, hourlyWeather[timeController.timeHours + 1].cloudPower, hourlyTimePercent);
-                cloudRenderer.material.SetFloat("_CloudPower", cloudPower);
-#endif
+                        chanceOfRainText.text = chanceOfRain.ToString("00") + "% Rain";
+
+
+                    cloudPower = Mathf.Lerp(hourlyWeather[timeController.timeHours].cloudPower, hourlyWeather[timeController.timeHours + 1].cloudPower, hourlyTimePercent);
+                    cloudRenderer.material.SetFloat("_CloudPower", cloudPower);
+
                     windSpeed = Mathf.Lerp(hourlyWeather[timeController.timeHours].windSpeed, hourlyWeather[timeController.timeHours + 1].windSpeed, hourlyTimePercent);
 
-#if !UNITY_EDITOR
 
-                wind.x = Mathf.Lerp(wind.x, windSpeed * windMultiplier, hourlyTimePercent);
-                wind.y = wind.x;
-                cloudRenderer.material.SetVector("_CloudSpeed", wind * timeController.timeScale);
-#endif
+
+                    wind.x = Mathf.Lerp(wind.x, windSpeed * windMultiplier, hourlyTimePercent);
+                    wind.y = wind.x;
+                    cloudRenderer.material.SetVector("_CloudSpeed", wind * timeController.timeScale);
+
 
                     if (hourlyWeather[timeController.timeHours].wetness <= 0)
                     {
@@ -481,13 +496,13 @@ namespace TimeWeather
                             RenderSettings.fogDensity = Mathf.Lerp(RenderSettings.fogDensity, currentWeatherPreset.fogStrength, hourlyTimePercent * fogSpeed);
                             //RenderSettings.fogColor = Color.Lerp(RenderSettings.fogColor, currentWeatherPreset.fogColour, hourlyTimePercent * fogSpeed);
 
-#if !UNITY_EDITOR
-                        if (currentWeatherPreset.clips != null)
-                        {
-                            weatherAudio.newSoundtrack(hourlyWeather[timeController.timeHours].weatherAudio, currentWeatherPreset.volume);
 
-                        }
-#endif
+                            if (currentWeatherPreset.clips != null)
+                            {
+                                weatherAudio.newSoundtrack(hourlyWeather[timeController.timeHours].weatherAudio, currentWeatherPreset.volume);
+
+                            }
+
                         }
 
                         if (currentWeatherPreset.weatherParticles.Length > 0)
@@ -510,30 +525,29 @@ namespace TimeWeather
 
                             }
                         }
-                        else
+
+
+                        if (weatherDataPresets[i].weatherParticles.Length > 0)
                         {
+                            List<ParticleSystem> presetParticles = new List<ParticleSystem>();
+                            List<ParticleSystem> currentParticles = new List<ParticleSystem>();
 
-                            if (weatherDataPresets[i].weatherParticles.Length > 0)
+                            for (int w = 0; w < weatherDataPresets[i].weatherParticles.Length; w++)
                             {
-                                List<ParticleSystem> presetParticles = new List<ParticleSystem>();
-                                List<ParticleSystem> currentParticles = new List<ParticleSystem>();
+                                presetParticles.Add(weatherDataPresets[i].weatherParticles[w].particleSystem);
 
-                                for (int w = 0; w < weatherDataPresets[i].weatherParticles.Length; w++)
+                                for (int cw = 0; cw < currentWeatherPreset.weatherParticles.Length; cw++)
                                 {
-                                    presetParticles.Add(weatherDataPresets[i].weatherParticles[w].particleSystem);
+                                    currentParticles.Add(currentWeatherPreset.weatherParticles[cw].particleSystem);
+                                }
 
-                                    for (int cw = 0; cw < currentWeatherPreset.weatherParticles.Length; cw++)
-                                    {
-                                        currentParticles.Add(currentWeatherPreset.weatherParticles[cw].particleSystem);
-                                    }
-
-                                    if (!currentParticles.Contains(presetParticles[w]))
-                                    {
-                                        presetParticles[w].Stop();
-                                    }
+                                if (!currentParticles.Contains(presetParticles[w]))
+                                {
+                                    presetParticles[w].Stop();
                                 }
                             }
                         }
+
                     }
 
                     if (temperature <= 0f && currentWeatherPreset.isRaining)

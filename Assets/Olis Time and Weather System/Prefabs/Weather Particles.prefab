@@ -192,6 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxVolume: 1
+  transitionDuration: 25
   currentSource: 0
 --- !u!1001 &1604810062919849345
 PrefabInstance:
@@ -425,34 +426,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5277696795917571701}
     m_Modifications:
-    - target: {fileID: 2102610022, guid: df999f5e7140e0147ad99260a5435dbd, type: 3}
-      propertyPath: killAudio.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 2102610022, guid: df999f5e7140e0147ad99260a5435dbd, type: 3}
-      propertyPath: killAudio.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 0e44d31b00f5ee84f8084855c5b56c58, type: 3}
-    - target: {fileID: 2102610022, guid: df999f5e7140e0147ad99260a5435dbd, type: 3}
-      propertyPath: killAudio.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: d42ea94b8ae78d74dba8cb600accf1c9, type: 3}
-    - target: {fileID: 2102610022, guid: df999f5e7140e0147ad99260a5435dbd, type: 3}
-      propertyPath: killAudio.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 7af389c50f3d38d46b2583c7b75414af, type: 3}
-    - target: {fileID: 2102610022, guid: df999f5e7140e0147ad99260a5435dbd, type: 3}
-      propertyPath: killAudio.Array.data[3]
-      value: 
-      objectReference: {fileID: 8300000, guid: f60b5f20592c1b246b60ba90338e5f1b, type: 3}
-    - target: {fileID: 2102610022, guid: df999f5e7140e0147ad99260a5435dbd, type: 3}
-      propertyPath: killAudio.Array.data[4]
-      value: 
-      objectReference: {fileID: 8300000, guid: 92cf20aa733c83940839a03d95c29fb0, type: 3}
-    - target: {fileID: 2102610022, guid: df999f5e7140e0147ad99260a5435dbd, type: 3}
-      propertyPath: killAudio.Array.data[5]
-      value: 
-      objectReference: {fileID: 8300000, guid: 34d6750e052e96146b7169ac4be17018, type: 3}
     - target: {fileID: 9053568905342574657, guid: df999f5e7140e0147ad99260a5435dbd,
         type: 3}
       propertyPath: m_RootOrder
@@ -512,26 +485,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lightning Particles
-      objectReference: {fileID: 0}
-    - target: {fileID: 9053568905342574662, guid: df999f5e7140e0147ad99260a5435dbd,
-        type: 3}
-      propertyPath: ShapeModule.type
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 9053568905342574662, guid: df999f5e7140e0147ad99260a5435dbd,
-        type: 3}
-      propertyPath: ShapeModule.m_Scale.x
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 9053568905342574662, guid: df999f5e7140e0147ad99260a5435dbd,
-        type: 3}
-      propertyPath: ShapeModule.m_Scale.y
-      value: 150
-      objectReference: {fileID: 0}
-    - target: {fileID: 9053568905342574662, guid: df999f5e7140e0147ad99260a5435dbd,
-        type: 3}
-      propertyPath: ShapeModule.radiusThickness
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df999f5e7140e0147ad99260a5435dbd, type: 3}

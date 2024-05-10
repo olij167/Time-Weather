@@ -14,6 +14,8 @@ namespace TimeWeather
         public AudioClip[] killAudio;
         public AudioSource audioSource;
 
+        [Range (0.1f, 1f)]public float maxVolume;
+
         private void Update()
         {
             if (particles.particleCount < currentParticleCount && killAudio.Length > 0)
@@ -23,7 +25,7 @@ namespace TimeWeather
                 if (killAudio[r] != null)
                 {
                     audioSource.clip = killAudio[r];
-                    audioSource.volume = 1f;
+                    audioSource.volume = maxVolume;
                     audioSource.Play();
                     StartCoroutine(FadeAudio.StartFade(audioSource, killAudio[r].length - (killAudio[r].length / 3), 0f));
                 }
@@ -37,7 +39,7 @@ namespace TimeWeather
                 if (bornAudio[r] != null)
                 {
                     audioSource.clip = bornAudio[r];
-                    audioSource.volume = 1f;
+                    audioSource.volume = maxVolume;
                     audioSource.Play();
                     StartCoroutine(FadeAudio.StartFade(audioSource, bornAudio[r].length - (bornAudio[r].length / 3), 0f));
                 }
