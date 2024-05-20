@@ -104,6 +104,8 @@ namespace TimeWeather
 
 
         [Header("UI")]
+        [Tooltip("Toggle whether to show time UI elements")]
+        public bool toggleTimeUI;
         [Tooltip("Toggle whether to show seconds on the UI")]
         public bool showSeconds = true;
         [Tooltip("Toggle whether to show 12 or 24 hour time")]
@@ -116,15 +118,22 @@ namespace TimeWeather
         public TextMeshProUGUI dayText;
         [HideInInspector] public string timeString;
 
+        [Tooltip("Toggle the ability to control time in-game")]
+        public bool toggleUITimeControls;
+        private GameObject timeControlsParent;
         [Tooltip("A slider for controlling the speed that time passes during runtime")]
         public UnityEngine.UI.Slider timeScaleSlider;
         [Tooltip("A slider for controlling the time of day during runtime")]
         public UnityEngine.UI.Slider timeOfDaySlider;
 
+        [Tooltip("Toggle whether to show sunrise and set time UI")]
+        public bool toggleSunTimeUI;
         [Tooltip("Text for displaying the current day's sunrise time")]
         public TextMeshProUGUI sunriseText;
         [Tooltip("Text for displaying the current day's sunrise time")]
         public TextMeshProUGUI sunsetText;
+
+        public bool showDebugLogs;
 
 
         [Header("Debug")]
@@ -191,14 +200,17 @@ namespace TimeWeather
             {
                 daysInYear += monthPresets[i].daysInMonth;
             }
-            Debug.Log("Days in year " + daysInYear);
+            if (showDebugLogs) Debug.Log("Days in year " + daysInYear);
 
             //SetCalendar();
 
+
             if (timeScaleSlider != null)
             {
+                timeControlsParent = timeScaleSlider.transform.parent.parent.gameObject;
+
                 timeScaleSlider.minValue = 0.001f;
-                timeScaleSlider.maxValue = 1f;
+                timeScaleSlider.maxValue = 60f;
 
                 timeScaleSlider.value = secondsPerMinuteInGame;
             }
@@ -210,33 +222,83 @@ namespace TimeWeather
 
                 timeOfDaySlider.value = timeOfDay;
             }
+
+
+            ToggleUI();
+        }
+
+        public void ToggleUI()
+        {
+            if (!toggleTimeUI)
+            {
+                if (timeText != null) timeText.gameObject.SetActive(false);
+                if (dayText != null) dayText.gameObject.SetActive(false);
+
+                toggleUITimeControls = false;
+                toggleSunTimeUI = false;
+            }
+            else
+            {
+                if (timeText != null) timeText.gameObject.SetActive(true);
+                if (dayText != null) dayText.gameObject.SetActive(true);
+            }
+
+            if (toggleUITimeControls)
+            {
+                if (timeScaleSlider != null) timeScaleSlider.value = secondsPerMinuteInGame;
+                
+                if (timeOfDaySlider != null)
+                {
+                    timeOfDaySlider.value = timeOfDay;
+                    timeOfDaySlider.gameObject.SetActive(true);
+                }
+                if (timeControlsParent != null) timeControlsParent.SetActive(true);
+
+            }
+            else
+            {
+                if (timeControlsParent != null) timeControlsParent.SetActive(false);
+                //if (timeScaleSlider != null) timeScaleSlider.gameObject.SetActive(false);
+                if (timeOfDaySlider != null) timeOfDaySlider.gameObject.SetActive(false);
+            }
+
+            if (!toggleSunTimeUI)
+            {
+                if (sunriseText != null) sunriseText.gameObject.SetActive(false);
+                if (sunsetText != null) sunsetText.gameObject.SetActive(false);
+            }
+            else
+            {
+                if (sunriseText != null) sunriseText.gameObject.SetActive(true);
+                if (sunsetText != null) sunsetText.gameObject.SetActive(true);
+            }
         }
 
         void Update()
         {
-
-
             if (Application.isPlaying)
             {
 
-            if (timeScaleSlider != null)
-                    secondsPerMinuteInGame = timeScaleSlider.value;
-
-                //if (timeOfDay <= 23.9f)
-                if (timeOfDaySlider != null)
+                if (toggleUITimeControls)
                 {
-                    if (timeOfDaySlider.value <= 23.99f && timeOfDay <= 23.99f)
-                        timeOfDay = timeOfDaySlider.value;
-                    else
-                        timeOfDaySlider.value = timeOfDay;
+                    if (timeScaleSlider != null)
+                        secondsPerMinuteInGame = timeScaleSlider.value;
+
+                    //if (timeOfDay <= 23.9f)
+                    if (timeOfDaySlider != null && timeOfDaySlider.value > 0 && timeOfDaySlider.value < 24)
+                    {
+                        if (timeOfDaySlider.value <= 23.99f && timeOfDay <= 23.99f)
+                            timeOfDay = timeOfDaySlider.value;
+                        else
+                            timeOfDaySlider.value = timeOfDay;
+                    }
                 }
 
-                    timeScale = 24 / (secondsPerMinuteInGame / 60);
+                if (timeOfDaySlider != null) timeOfDaySlider.value = timeOfDay;
+
+                timeScale = 24 / (secondsPerMinuteInGame / 60);
 
                 timeOfDay += Time.deltaTime * timeScale / 86400; // seconds in a day
-
-            if (timeOfDaySlider != null)
-                    timeOfDaySlider.value = timeOfDay;
 
                 timePercent = (timeOfDay %= 24f) / 24f;
                 UpdateLighting();
@@ -247,61 +309,66 @@ namespace TimeWeather
 
                 hourlyTimePercent = (timeMinutes %= 60f) / 60f;
 
-                if (twelveHourTime)
+                if (toggleTimeUI)
                 {
-                    if (timeOfDay < 12)
+                    if (twelveHourTime)
                     {
-                        if (showSeconds)
-                            timeString = timeHours.ToString("00") + ":" + timeMinutes.ToString("00") + ":" + timeSeconds.ToString("00");
-                        else
-                            timeString = timeHours.ToString("00") + ":" + timeMinutes.ToString("00");
-
-                        if (timeText != null)
-                            timeText.text = timeString + " am";
-                    }
-                    else if (timeOfDay > 12 && timeOfDay < 13)
-                    {
-                        if (showSeconds)
-                            timeString = timeHours.ToString("00") + ":" + timeMinutes.ToString("00") + ":" + timeSeconds.ToString("00");
-                        else
-                            timeString = timeHours.ToString("00") + ":" + timeMinutes.ToString("00");
-
-                        if (timeText != null)
-                            timeText.text = timeString + " pm";
-                    }
-                    else
-                    {
-                        if (showSeconds)
-                            timeString = (timeHours - 12).ToString("00") + ":" + timeMinutes.ToString("00") + ":" + timeSeconds.ToString("00");
-                        else
-                            timeString = (timeHours - 12).ToString("00") + ":" + timeMinutes.ToString("00");
-
-                        if (timeText != null)
-                            timeText.text = timeString + " pm";
-
-
-                        if (timeOfDay >= 23.9f)
+                        if (timeOfDay < 12)
                         {
-                            isNewDay = true;
-                            //timeOfDaySlider.value = 0f;
+                            if (showSeconds)
+                                timeString = timeHours.ToString("00") + ":" + timeMinutes.ToString("00") + ":" + timeSeconds.ToString("00");
+                            else
+                                timeString = timeHours.ToString("00") + ":" + timeMinutes.ToString("00");
+
+                            if (timeText != null)
+                                timeText.text = timeString + " am";
+                        }
+                        else if (timeOfDay > 12 && timeOfDay < 13)
+                        {
+                            if (showSeconds)
+                                timeString = timeHours.ToString("00") + ":" + timeMinutes.ToString("00") + ":" + timeSeconds.ToString("00");
+                            else
+                                timeString = timeHours.ToString("00") + ":" + timeMinutes.ToString("00");
+
+                            if (timeText != null)
+                                timeText.text = timeString + " pm";
+                        }
+                        else
+                        {
+                            if (showSeconds)
+                                timeString = (timeHours - 12).ToString("00") + ":" + timeMinutes.ToString("00") + ":" + timeSeconds.ToString("00");
+                            else
+                                timeString = (timeHours - 12).ToString("00") + ":" + timeMinutes.ToString("00");
+
+                            if (timeText != null)
+                                timeText.text = timeString + " pm";
+
+
+                            if (timeOfDay >= 23.9f)
+                            {
+                                isNewDay = true;
+                                //timeOfDaySlider.value = 0f;
+                            }
                         }
                     }
-                }
-                else
-                {
-                    if (showSeconds)
-                        timeString = timeHours.ToString("00") + ":" + timeMinutes.ToString("00") + ":" + timeSeconds.ToString("00");
                     else
-                        timeString = timeHours.ToString("00") + ":" + timeMinutes.ToString("00");
+                    {
+                        if (showSeconds)
+                            timeString = timeHours.ToString("00") + ":" + timeMinutes.ToString("00") + ":" + timeSeconds.ToString("00");
+                        else
+                            timeString = timeHours.ToString("00") + ":" + timeMinutes.ToString("00");
 
-                    if (timeText != null)
-                        timeText.text = timeString;
+                        if (timeText != null)
+                            timeText.text = timeString;
+                    }
                 }
 
                 if (isNewDay && timeOfDay < 1f)
                 {
                     ProgressDays(1);
                 }
+
+                ToggleUI();
             }
         }
 
@@ -323,9 +390,10 @@ namespace TimeWeather
                 else
                 {
                     ProgressMonth(1);
+                    dayOfMonth = 1;
                 }
 
-                if (dayText != null)
+                if (toggleTimeUI && dayText != null)
                     dayText.text = currentDay.ToString() + ", " + currentMonthData.month + " " + dayOfMonth + ", \n" + currentMonthData.season + ", " + currentYear;
             }
 
@@ -355,9 +423,10 @@ namespace TimeWeather
                 else
                 {
                     RegressMonth(1);
+                    dayOfMonth = currentMonthData.daysInMonth;
                 }
 
-                if (dayText != null)
+                if (toggleTimeUI && dayText != null)
                     dayText.text = currentDay.ToString() + ", " + currentMonthData.month + " " + dayOfMonth + ", \n" + currentMonthData.season + ", " + currentYear;
             }
 
@@ -411,11 +480,11 @@ namespace TimeWeather
             }
 
             if (dayOfMonth > currentMonthData.daysInMonth)
-                dayOfMonth = 1;
+                dayOfMonth = currentMonthData.daysInMonth;
 
             ProgressDays(0);
 
-            if (dayText != null)
+            if (toggleTimeUI && dayText != null)
                 dayText.text = currentDay.ToString() + ", " + currentMonthData.month + " " + dayOfMonth + ", \n" + currentMonthData.season + ", " + currentYear;
         }
         public void RegressMonth(int numToProgress = 1)
@@ -472,7 +541,7 @@ namespace TimeWeather
 
             RegressDays(0);
 
-            if (dayText != null)
+            if (toggleTimeUI && dayText != null)
                 dayText.text = currentDay.ToString() + ", " + currentMonthData.month + " " + dayOfMonth + ", \n" + currentMonthData.season + ", " + currentYear;
         }
 
@@ -720,6 +789,16 @@ namespace TimeWeather
                 smoothFadeNight = 1;
             }
 
+        }
+
+        public class TimeStamp
+        {
+            [Range(0f, 24f)] public float timeOfDay;
+
+            public Day dayOfWeek;
+            public int dayOfMonth;
+            public MonthData month;
+            public int year;
         }
     }
 

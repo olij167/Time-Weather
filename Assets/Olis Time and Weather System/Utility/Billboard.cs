@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Billboard : MonoBehaviour
 {
-    private Transform camTransform;
+    public Transform camTransform;
 
     private void Start()
     {

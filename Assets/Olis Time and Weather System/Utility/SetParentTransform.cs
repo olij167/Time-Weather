@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace TimeWeather
-{
+
     public class SetParentTransform : MonoBehaviour
     {
         public Transform parentTransform;
@@ -24,4 +23,4 @@ namespace TimeWeather
 
         }
     }
-}
+

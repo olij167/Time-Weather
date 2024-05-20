@@ -59,12 +59,14 @@ namespace TimeWeather
             GUILayout.Label("Change Time ");
             GUILayout.BeginHorizontal();
             GUILayout.Label("Current Time ");
-            timeController.timeOfDay = EditorGUILayout.Slider(timeOfDay, 0f, 23.99f);
+            if (timeController.toggleUITimeControls) timeController.timeOfDaySlider.value = EditorGUILayout.Slider(timeOfDay, 0f, 23.99f);
+            else timeController.timeOfDay = EditorGUILayout.Slider(timeOfDay, 0f, 23.99f);
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
             GUILayout.Label("Time Scale ");
-            timeController.secondsPerMinuteInGame = EditorGUILayout.Slider(timeScale, 0.001f, 60f);
+            if (timeController.toggleUITimeControls) timeController.timeScaleSlider.value = EditorGUILayout.Slider(timeScale, 0.001f, 60f);
+            else timeController.secondsPerMinuteInGame = EditorGUILayout.Slider(timeScale, 0.001f, 60f);
             GUILayout.EndHorizontal();
 
             //if (timeController.timeOfDay < 0.01f)

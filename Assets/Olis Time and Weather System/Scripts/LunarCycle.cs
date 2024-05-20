@@ -10,6 +10,7 @@ namespace TimeWeather
         public Sprite[] moonPhases;
 
         public int currentPhase = 0;
+        public int phaseLength = 2;
         public int daysUntilNextPhase = 2;
 
         private TimeController timeController;
@@ -26,13 +27,13 @@ namespace TimeWeather
 
         private void Update()
         {
-            if (currentDate != timeController.dayOfMonth)
+            if (currentDate != timeController.dayOfMonth && timeController.timeOfDay > 12f)
             {
                 currentDate = timeController.dayOfMonth;
                 daysUntilNextPhase -= 1;
             }
 
-            if (daysUntilNextPhase == 0 && timeController.timeOfDay > 12f)
+            if (daysUntilNextPhase <= 0 )
             {
                 UpdateMoonPhase();
             }

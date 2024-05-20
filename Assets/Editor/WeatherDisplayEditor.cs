@@ -91,7 +91,7 @@ public class WeatherDisplayEditor : Editor
         GUILayout.Label("Current Weather ", EditorStyles.boldLabel);
         GUILayout.Label(weatherController.temperature.ToString("00") + "°");
         GUILayout.Label(weatherController.currentWeatherPreset.weatherCondition);
-        GUILayout.Label(weatherController.chanceOfRain.ToString("00") + "% Rain Chance");
+        GUILayout.Label(weatherController.rainChance.ToString("00") + "% Rain Chance");
         EditorGUILayout.EndHorizontal();
         DrawUILine(new Color(1f, 1f, 1f, 0.25f));
 
@@ -147,7 +147,7 @@ public class WeatherDisplayEditor : Editor
             {
                 if (temperature >= weatherController.weatherDataPresets[w].tempRange.x && temperature <= weatherController.weatherDataPresets[w].tempRange.y)
                 {
-                    if (chanceOfRain >= weatherController.weatherDataPresets[w].chanceOfRainRange.x && chanceOfRain <= weatherController.weatherDataPresets[w].chanceOfRainRange.y)
+                    if (chanceOfRain >= weatherController.weatherDataPresets[w].rainRange.x && chanceOfRain <= weatherController.weatherDataPresets[w].rainRange.y)
                     {
                         if (isRaining == weatherController.weatherDataPresets[w].isRaining)
                         {
