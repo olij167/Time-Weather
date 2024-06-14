@@ -85,7 +85,7 @@ Material:
     - _CastShadows: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _CloudAlpha: 25
+    - _CloudAlpha: 20
     - _CloudPower: 3.060034
     - _CloudScale: 10
     - _CloudSeperation: 5
@@ -110,7 +110,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _VertexOffset: -0.35
+    - _VertexOffset: -0.1
     - _WorkflowMode: 1
     - _ZTest: 4
     - _ZWrite: 1
